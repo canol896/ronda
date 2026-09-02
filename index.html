@@ -67,7 +67,7 @@
       height: 100%;
       display: block;
       pointer-events: auto;
-      touch-action: none;
+      touch-action: pan-y;
     }
 
     .nebula-glow {
@@ -175,20 +175,20 @@
     }
 
     .brand-title {
-      font-size: 1.85rem;
+      font-size: 1.62rem;
       font-weight: 800;
-      letter-spacing: 5px;
+      letter-spacing: 4px;
       color: #FFFFFF;
-      margin-top: 10px;
+      margin-top: 6px;
       margin-bottom: 4px;
       text-transform: uppercase;
       text-shadow: 0 2px 14px rgba(200, 125, 70, 0.4);
     }
 
     .brand-subtitle {
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      letter-spacing: 6px;
+      letter-spacing: 5px;
       color: var(--copper-bright);
       margin-bottom: 12px;
       text-transform: uppercase;
@@ -694,7 +694,7 @@
   </div>
 
   <div class="interaction-hint">
-    <span>✨ Ekrana dokunarak veya kaydırarak yıldızları yönlendir!</span>
+    <span>✨ Arka plana dokunarak veya kaydırarak yıldızları dalgalandır!</span>
   </div>
 
   <div class="admin-bar">
@@ -898,9 +898,6 @@
   </div>
 
   <script>
-    /* -------------------------------------------------------------
-       YÜKSEK PERFORMANSLI & DOLU ETKİLEŞİMLİ KOZMİK ARKA PLAN MOTORU
-       ------------------------------------------------------------- */
     const canvas = document.getElementById('interactiveCanvas');
     const ctx = canvas.getContext('2d', { alpha: true });
 
@@ -908,9 +905,9 @@
     let height = 0;
     let cosmicParticles = [];
     
-    // Telefonda ve bilgisayarda hem akıcı hem de arka planın dolu görünmesi sağlandı
     const IS_MOBILE = window.innerWidth < 768;
-    const PARTICLE_COUNT = IS_MOBILE ? 65 : 100;
+    // Performans için mobilde DPR sınırlandırıldı, nesne yoğunluğu dengelendi
+    const PARTICLE_COUNT = IS_MOBILE ? 85 : 120;
 
     let pointer = {
       x: -1000,
@@ -919,7 +916,8 @@
     };
 
     function resizeCanvas() {
-      const dpr = window.devicePixelRatio || 1;
+      // Mobilde ağır GPU yükünü önlemek için max DPR 1.5 ile sınırlandırıldı
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = width * dpr;
@@ -950,22 +948,22 @@
           this.x = Math.random() * width;
           this.y = Math.random() * height;
         } else {
-          this.x = -20;
+          this.x = -30;
           this.y = height * 0.1 + Math.random() * (height * 0.9);
         }
 
-        const speed = 0.5 + Math.random() * 0.8;
+        const speed = 0.45 + Math.random() * 0.85;
         this.baseVx = speed * (0.8 + Math.random() * 0.4);
         this.baseVy = -speed * (0.85 + Math.random() * 0.45);
         this.vx = this.baseVx;
         this.vy = this.baseVy;
 
-        // Objeler telefonda daha belirgin ve hissedilir olması için biraz büyütüldü
-        this.size = (IS_MOBILE ? 2.5 : 2.0) + Math.random() * 4.8;
+        // Objeler daha büyük ve dolu görünecek şekilde optimize edildi
+        this.size = (IS_MOBILE ? 3.0 : 2.5) + Math.random() * 5.2;
         this.type = TYPES[Math.floor(Math.random() * TYPES.length)];
         this.color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
         
-        this.alpha = 0.35 + Math.random() * 0.55;
+        this.alpha = 0.4 + Math.random() * 0.5;
         this.twinkleSpeed = 0.025 + Math.random() * 0.035;
         this.twinkleAngle = Math.random() * Math.PI * 2;
         this.rotation = Math.random() * Math.PI;
@@ -973,18 +971,17 @@
       }
 
       update() {
-        // Parmağın veya mouse'un yakınına gelen objelerin yön değiştirmesi ve tepki vermesi
         if (pointer.active) {
           let dx = this.x - pointer.x;
           let dy = this.y - pointer.y;
           let distSq = dx * dx + dy * dy;
-          let maxDist = 160;
+          let maxDist = 180;
 
           if (distSq < maxDist * maxDist && distSq > 1) {
             let dist = Math.sqrt(distSq);
-            let force = (1 - dist / maxDist) * 3.5;
-            this.vx += (dx / dist) * force * 0.28;
-            this.vy += (dy / dist) * force * 0.28;
+            let force = (1 - dist / maxDist) * 4.0;
+            this.vx += (dx / dist) * force * 0.32;
+            this.vy += (dy / dist) * force * 0.32;
           }
         }
 
@@ -996,24 +993,27 @@
         this.twinkleAngle += this.twinkleSpeed;
         this.rotation += this.rotSpeed;
 
-        if (this.x > width + 50 || this.y < -50) {
+        if (this.x > width + 60 || this.y < -60) {
           this.reset(false);
         }
       }
 
       draw() {
-        const curAlpha = Math.max(0.2, this.alpha + Math.sin(this.twinkleAngle) * 0.3);
+        const curAlpha = Math.max(0.25, this.alpha + Math.sin(this.twinkleAngle) * 0.3);
         const { r, g, b } = this.color;
 
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.rotation);
 
+        // Mobilde maliyetli shadowBlur devre dışı bırakılarak CPU/GPU yükü sıfırlandı
+        if (!IS_MOBILE) {
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.6)`;
+        }
+
         if (this.type === 'sparkle') {
           ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha})`;
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.8)`;
-
           const s = this.size * 2.4;
           ctx.beginPath();
           ctx.moveTo(0, -s);
@@ -1052,7 +1052,7 @@
       }
     }
 
-    // Mobil ve masaüstü etkileşim dinleyicileri (Halka oluşturulmadan doğrudan dokunulan bölgedeki objelerin yönünü değiştirir)
+    // Dokunma ve kaydırma etkileşim dinleyicileri (Halka patlamaları kaldırıldı, doğrudan akış etkileşimi sağlandı)
     window.addEventListener('pointermove', (e) => {
       pointer.x = e.clientX;
       pointer.y = e.clientY;
@@ -1298,6 +1298,7 @@ Soruya nazik, samimi, Türkçe ve kulübün prestijli havasına uygun cevap ver.
       const tempTextarea = document.createElement('textarea');
       tempTextarea.value = fullHtml;
       document.body.appendChild(tempTextarea);
+      tempTestarea = tempTextarea;
       tempTextarea.select();
       
       try {
