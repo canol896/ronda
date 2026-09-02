@@ -67,7 +67,7 @@
       height: 100%;
       display: block;
       pointer-events: auto;
-      cursor: crosshair;
+      touch-action: none;
     }
 
     .nebula-glow {
@@ -694,7 +694,7 @@
   </div>
 
   <div class="interaction-hint">
-    <span>✨ Ekrana dokunarak kozmik yıldız patlamaları oluştur!</span>
+    <span>✨ Ekrana dokunarak veya kaydırarak yıldızları yönlendir!</span>
   </div>
 
   <div class="admin-bar">
@@ -707,21 +707,17 @@
 
   <div class="app-container">
     
-    <!-- Marka Başlığı (Logo tamamen kaldırıldı) -->
     <h1 class="brand-title">RONDA</h1>
     <h2 class="brand-subtitle">SOCIAL CLUB</h2>
     <p class="brand-bio">İzmir'in Kültür, Sosyalleşme ve İngilizce Konuşma Topluluğu</p>
 
-    <!-- Durum Rozeti -->
     <div class="status-badge">
       <span class="status-pulse-dot"></span>
       <span>Bu Pazar Seansı Açık • Kontenjan Sınırlı</span>
     </div>
 
-    <!-- Bağlantı Listesi -->
     <div class="links-stack">
       
-      <!-- 1. Ana Rezervasyon Butonu (Vurgulu) -->
       <a href="https://wa.me/905xxxxxxxxx?text=Speaking%20Club%20rezervasyonu%20yaptırmak%20istiyorum" id="link-speaking" class="link-card primary-event" target="_blank">
         <div class="card-left">
           <div class="card-icon">🎟️</div>
@@ -733,7 +729,6 @@
         <span class="badge-pill badge-price">300 ₺</span>
       </a>
 
-      <!-- 2. RESMİ WEB SİTESİ KARTI -->
       <a href="https://canol896.github.io/ronda/website.html" id="link-website" class="link-card website-card" target="_blank">
         <div class="card-left">
           <div class="card-icon">🌐</div>
@@ -745,7 +740,6 @@
         <span class="badge-pill badge-web">Keşfet ↗</span>
       </a>
 
-      <!-- 3. WhatsApp Topluluk Grubu -->
       <a href="https://chat.whatsapp.com/senin-whatsapp-linkin" id="link-community" class="link-card whatsapp-card" target="_blank">
         <div class="card-left">
           <div class="card-icon">💬</div>
@@ -757,7 +751,6 @@
         <span class="badge-pill badge-free">Ücretsiz</span>
       </a>
 
-      <!-- 4. Arkadaş Kampanyası -->
       <a href="https://instagram.com/rondasocialclub" id="link-promo" class="link-card" target="_blank">
         <div class="card-left">
           <div class="card-icon">👥</div>
@@ -769,7 +762,6 @@
         <span class="badge-pill badge-promo">%17 İndirim</span>
       </a>
 
-      <!-- 5. GEMINI AI: Ronda Konuşma Koçu & Soru Üretici -->
       <div class="link-card ai-assistant-card" onclick="openAiModal()">
         <div class="card-left">
           <div class="card-icon">✨</div>
@@ -781,7 +773,6 @@
         <span class="badge-pill ai-badge">AI Canlı</span>
       </div>
 
-      <!-- 6. Movie & Quiz Nights (Yakında) -->
       <div class="link-card upcoming">
         <div class="card-left">
           <div class="card-icon">🎬</div>
@@ -793,7 +784,6 @@
         <span class="badge-pill badge-soon">Yakında</span>
       </div>
 
-      <!-- 7. Resmi Instagram -->
       <a href="https://instagram.com/rondasocialclub" id="link-ig" class="link-card" target="_blank">
         <div class="card-left">
           <div class="card-icon">📸</div>
@@ -807,12 +797,10 @@
 
     </div>
 
-    <!-- Mekan & Konum Bilgisi -->
     <div class="venue-capsule">
       <span>📍 115 Karma Atölye &amp; Ekim'de La Fabrika</span>
     </div>
 
-    <!-- Footer -->
     <footer>
       <span>© 2026 Ronda Social Club • İzmir</span>
       <span>Kültür, Konuşma ve Sosyal Kulüp Deneyimi</span>
@@ -820,10 +808,8 @@
 
   </div>
 
-  <!-- Bildirim Kutusu (Toast) -->
-  <div id="toastNotification" class="">✨ Ronda Social Club enerjisi aktive edildi!</div>
+  <div id="toastNotification">✨ Ronda Social Club enerjisi aktive edildi!</div>
 
-  <!-- Ronda AI Asistanı & Speaking Koçu Modalı (Gemini API) -->
   <div id="aiModal">
     <div class="ai-modal-box">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -912,16 +898,25 @@
   </div>
 
   <script>
+    /* -------------------------------------------------------------
+       YÜKSEK PERFORMANSLI & DOLU ETKİLEŞİMLİ KOZMİK ARKA PLAN MOTORU
+       ------------------------------------------------------------- */
     const canvas = document.getElementById('interactiveCanvas');
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
 
     let width = 0;
     let height = 0;
-    let ambientParticles = [];
-    let interactiveSparks = [];
-    let rippleRings = [];
+    let cosmicParticles = [];
+    
+    // Telefonda ve bilgisayarda hem akıcı hem de arka planın dolu görünmesi sağlandı
+    const IS_MOBILE = window.innerWidth < 768;
+    const PARTICLE_COUNT = IS_MOBILE ? 65 : 100;
 
-    const AMBIENT_COUNT = 65;
+    let pointer = {
+      x: -1000,
+      y: -1000,
+      active: false
+    };
 
     function resizeCanvas() {
       const dpr = window.devicePixelRatio || 1;
@@ -945,7 +940,7 @@
 
     const TYPES = ['sparkle', 'star', 'star', 'ring', 'dust'];
 
-    class AmbientBody {
+    class CosmicParticle {
       constructor(initial = false) {
         this.reset(initial);
       }
@@ -955,43 +950,59 @@
           this.x = Math.random() * width;
           this.y = Math.random() * height;
         } else {
-          if (Math.random() < 0.5) {
-            this.x = -25;
-            this.y = height * 0.35 + Math.random() * (height * 0.75);
-          } else {
-            this.x = -25 + Math.random() * (width * 0.75);
-            this.y = height + 25;
-          }
+          this.x = -20;
+          this.y = height * 0.1 + Math.random() * (height * 0.9);
         }
 
-        const speed = 0.35 + Math.random() * 0.65;
-        this.vx = speed * (0.8 + Math.random() * 0.35);
-        this.vy = -speed * (0.85 + Math.random() * 0.4);
+        const speed = 0.5 + Math.random() * 0.8;
+        this.baseVx = speed * (0.8 + Math.random() * 0.4);
+        this.baseVy = -speed * (0.85 + Math.random() * 0.45);
+        this.vx = this.baseVx;
+        this.vy = this.baseVy;
 
-        this.size = 1.4 + Math.random() * 4.4;
+        // Objeler telefonda daha belirgin ve hissedilir olması için biraz büyütüldü
+        this.size = (IS_MOBILE ? 2.5 : 2.0) + Math.random() * 4.8;
         this.type = TYPES[Math.floor(Math.random() * TYPES.length)];
         this.color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
         
-        this.alpha = 0.25 + Math.random() * 0.65;
-        this.twinkleSpeed = 0.02 + Math.random() * 0.035;
+        this.alpha = 0.35 + Math.random() * 0.55;
+        this.twinkleSpeed = 0.025 + Math.random() * 0.035;
         this.twinkleAngle = Math.random() * Math.PI * 2;
         this.rotation = Math.random() * Math.PI;
         this.rotSpeed = (Math.random() - 0.5) * 0.025;
       }
 
       update() {
+        // Parmağın veya mouse'un yakınına gelen objelerin yön değiştirmesi ve tepki vermesi
+        if (pointer.active) {
+          let dx = this.x - pointer.x;
+          let dy = this.y - pointer.y;
+          let distSq = dx * dx + dy * dy;
+          let maxDist = 160;
+
+          if (distSq < maxDist * maxDist && distSq > 1) {
+            let dist = Math.sqrt(distSq);
+            let force = (1 - dist / maxDist) * 3.5;
+            this.vx += (dx / dist) * force * 0.28;
+            this.vy += (dy / dist) * force * 0.28;
+          }
+        }
+
+        this.vx += (this.baseVx - this.vx) * 0.06;
+        this.vy += (this.baseVy - this.vy) * 0.06;
+
         this.x += this.vx;
         this.y += this.vy;
         this.twinkleAngle += this.twinkleSpeed;
         this.rotation += this.rotSpeed;
 
-        if (this.x > width + 45 || this.y < -45) {
+        if (this.x > width + 50 || this.y < -50) {
           this.reset(false);
         }
       }
 
       draw() {
-        const curAlpha = Math.max(0.12, this.alpha + Math.sin(this.twinkleAngle) * 0.3);
+        const curAlpha = Math.max(0.2, this.alpha + Math.sin(this.twinkleAngle) * 0.3);
         const { r, g, b } = this.color;
 
         ctx.save();
@@ -1000,7 +1011,7 @@
 
         if (this.type === 'sparkle') {
           ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha})`;
-          ctx.shadowBlur = 12;
+          ctx.shadowBlur = 10;
           ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.8)`;
 
           const s = this.size * 2.4;
@@ -1014,38 +1025,26 @@
           ctx.fill();
 
           ctx.beginPath();
-          ctx.arc(0, 0, this.size * 0.5, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 255, 255, ${curAlpha * 0.95})`;
+          ctx.arc(0, 0, this.size * 0.45, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${curAlpha})`;
           ctx.fill();
 
         } else if (this.type === 'ring') {
           ctx.beginPath();
-          ctx.arc(0, 0, this.size * 1.1, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha * 0.8})`;
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.6)`;
+          ctx.arc(0, 0, this.size * 1.2, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha * 0.85})`;
           ctx.fill();
 
           ctx.beginPath();
-          ctx.ellipse(0, 0, this.size * 2.6, this.size * 0.85, Math.PI / 4, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha * 0.9})`;
-          ctx.lineWidth = 1;
+          ctx.ellipse(0, 0, this.size * 2.5, this.size * 0.85, Math.PI / 4, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha * 0.95})`;
+          ctx.lineWidth = 1.2;
           ctx.stroke();
-
-        } else if (this.type === 'dust') {
-          ctx.beginPath();
-          ctx.arc(0, 0, this.size * 0.85, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha * 0.5})`;
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.7)`;
-          ctx.fill();
 
         } else {
           ctx.beginPath();
           ctx.arc(0, 0, this.size, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha})`;
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.75)`;
           ctx.fill();
         }
 
@@ -1053,139 +1052,47 @@
       }
     }
 
-    class InteractiveSpark {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        const angle = Math.random() * Math.PI * 2;
-        const velocity = 2.0 + Math.random() * 6.5;
-        this.vx = Math.cos(angle) * velocity;
-        this.vy = Math.sin(angle) * velocity;
-        this.friction = 0.94;
-        this.gravity = -0.04;
+    // Mobil ve masaüstü etkileşim dinleyicileri (Halka oluşturulmadan doğrudan dokunulan bölgedeki objelerin yönünü değiştirir)
+    window.addEventListener('pointermove', (e) => {
+      pointer.x = e.clientX;
+      pointer.y = e.clientY;
+      pointer.active = true;
+    }, { passive: true });
 
-        this.size = 2.2 + Math.random() * 4.5;
-        this.color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
-        this.life = 1.0;
-        this.decay = 0.02 + Math.random() * 0.035;
-        this.rotation = Math.random() * Math.PI;
-        this.rotSpeed = (Math.random() - 0.5) * 0.2;
-      }
+    window.addEventListener('pointerleave', () => {
+      pointer.active = false;
+    }, { passive: true });
 
-      update() {
-        this.vx *= this.friction;
-        this.vy *= this.friction;
-        this.vy += this.gravity;
-        this.x += this.vx;
-        this.y += this.vy;
-        this.rotation += this.rotSpeed;
-        this.life -= this.decay;
-      }
-
-      draw() {
-        if (this.life <= 0) return;
-        const { r, g, b } = this.color;
-        const alpha = Math.max(0, this.life);
-
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation);
-        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
-        ctx.shadowBlur = 14;
-        ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 1)`;
-
-        const s = this.size * (0.8 + this.life);
-        ctx.beginPath();
-        ctx.moveTo(0, -s * 1.5);
-        ctx.quadraticCurveTo(0, 0, s * 1.5, 0);
-        ctx.quadraticCurveTo(0, 0, 0, s * 1.5);
-        ctx.quadraticCurveTo(0, 0, -s * 1.5, 0);
-        ctx.quadraticCurveTo(0, 0, 0, -s * 1.5);
-        ctx.closePath();
-        ctx.fill();
-
-        ctx.restore();
-      }
-    }
-
-    class ShockwaveRing {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.radius = 4;
-        this.maxRadius = 65 + Math.random() * 45;
-        this.life = 1.0;
-        this.decay = 0.035;
-        this.color = PALETTE[Math.floor(Math.random() * 2)];
-      }
-
-      update() {
-        this.radius += (this.maxRadius - this.radius) * 0.12;
-        this.life -= this.decay;
-      }
-
-      draw() {
-        if (this.life <= 0) return;
-        const { r, g, b } = this.color;
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${this.life * 0.8})`;
-        ctx.lineWidth = 2.2 * this.life;
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.9)`;
-        ctx.stroke();
-        ctx.restore();
-      }
-    }
-
-    function createCosmicBurst(x, y, count = 22) {
-      rippleRings.push(new ShockwaveRing(x, y));
-      for (let i = 0; i < count; i++) {
-        interactiveSparks.push(new InteractiveSpark(x, y));
-      }
-    }
-
-    window.addEventListener('pointerdown', (e) => {
-      const target = e.target;
-      if (!target.closest('input') && !target.closest('button') && !target.closest('#editModal .modal-box')) {
-        createCosmicBurst(e.clientX, e.clientY, 20);
-      }
-    });
-
-    window.addEventListener('touchmove', (e) => {
-      if (e.touches && e.touches[0] && Math.random() < 0.4) {
-        const touch = e.touches[0];
-        interactiveSparks.push(new InteractiveSpark(touch.clientX, touch.clientY));
+    window.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches[0]) {
+        pointer.x = e.touches[0].clientX;
+        pointer.y = e.touches[0].clientY;
+        pointer.active = true;
       }
     }, { passive: true });
 
-    for (let i = 0; i < AMBIENT_COUNT; i++) {
-      ambientParticles.push(new AmbientBody(true));
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        pointer.x = e.touches[0].clientX;
+        pointer.y = e.touches[0].clientY;
+        pointer.active = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      pointer.active = false;
+    }, { passive: true });
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      cosmicParticles.push(new CosmicParticle(true));
     }
 
     function renderLoop() {
       ctx.clearRect(0, 0, width, height);
 
-      for (let i = 0; i < ambientParticles.length; i++) {
-        ambientParticles[i].update();
-        ambientParticles[i].draw();
-      }
-
-      for (let i = rippleRings.length - 1; i >= 0; i--) {
-        rippleRings[i].update();
-        rippleRings[i].draw();
-        if (rippleRings[i].life <= 0) {
-          rippleRings.splice(i, 1);
-        }
-      }
-
-      for (let i = interactiveSparks.length - 1; i >= 0; i--) {
-        interactiveSparks[i].update();
-        interactiveSparks[i].draw();
-        if (interactiveSparks[i].life <= 0) {
-          interactiveSparks.splice(i, 1);
-        }
+      for (let i = 0; i < cosmicParticles.length; i++) {
+        cosmicParticles[i].update();
+        cosmicParticles[i].draw();
       }
 
       requestAnimationFrame(renderLoop);
