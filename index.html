@@ -174,55 +174,21 @@
       pointer-events: auto;
     }
 
-    .logo-frame {
-      width: 124px;
-      height: 124px;
-      margin-bottom: 15px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #FAF7F2;
-      border-radius: 50%;
-      border: 2px solid rgba(200, 125, 70, 0.6);
-      box-shadow: 0 0 32px rgba(200, 125, 70, 0.38), 0 10px 24px rgba(0, 0, 0, 0.75);
-      cursor: pointer;
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      overflow: hidden;
-    }
-
-    .logo-frame:hover {
-      transform: scale(1.04);
-      border-color: var(--copper-glow);
-      box-shadow: 0 0 45px rgba(200, 125, 70, 0.6);
-    }
-
-    .logo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.05);
-      transition: transform 0.3s ease;
-    }
-
-    .logo-frame:hover .logo-img {
-      transform: scale(1.12);
-    }
-
     .brand-title {
-      font-size: 1.62rem;
+      font-size: 1.85rem;
       font-weight: 800;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       color: #FFFFFF;
+      margin-top: 10px;
       margin-bottom: 4px;
       text-transform: uppercase;
       text-shadow: 0 2px 14px rgba(200, 125, 70, 0.4);
     }
 
     .brand-subtitle {
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       font-weight: 700;
-      letter-spacing: 5px;
+      letter-spacing: 6px;
       color: var(--copper-bright);
       margin-bottom: 12px;
       text-transform: uppercase;
@@ -603,7 +569,6 @@
       display: flex;
       flex-direction: column;
       gap: 3px;
-      text-align: center;
     }
 
     #toastNotification {
@@ -742,12 +707,7 @@
 
   <div class="app-container">
     
-    <!-- RESMİ RONDA SOCIAL CLUB LOGOSU (logo.png) -->
-    <div class="logo-frame" title="Dokun & Parlasın!" onclick="triggerLogoBurst(event)">
-      <img src="logo.png" alt="Ronda Social Club" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/300x300/FAF7F2/C87D46?text=Ronda+Logo';">
-    </div>
-
-    <!-- Marka Başlığı -->
+    <!-- Marka Başlığı (Logo tamamen kaldırıldı) -->
     <h1 class="brand-title">RONDA</h1>
     <h2 class="brand-subtitle">SOCIAL CLUB</h2>
     <p class="brand-bio">İzmir'in Kültür, Sosyalleşme ve İngilizce Konuşma Topluluğu</p>
@@ -1184,14 +1144,6 @@
       for (let i = 0; i < count; i++) {
         interactiveSparks.push(new InteractiveSpark(x, y));
       }
-    }
-
-    function triggerLogoBurst(e) {
-      const rect = e.currentTarget.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      createCosmicBurst(centerX, centerY, 38);
-      showToast("✨ Ronda Social Club enerjisi aktive edildi!");
     }
 
     window.addEventListener('pointerdown', (e) => {
