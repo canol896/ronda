@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ronda Social Club</title>
+  <style>
+    :root {
+      --navy: #291D46;
+      --copper: #C87D46;
+      --cream: #FAF7F2;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--navy);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 36px 20px 48px 20px;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .brand-avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background-color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2.5px solid var(--copper);
+      box-shadow: 0 6px 18px rgba(41, 29, 70, 0.12);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .brand-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    p.tagline {
+      font-size: 0.88rem;
+      color: #635C73;
+      line-height: 1.4;
+      margin-bottom: 28px;
+    }
+
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 16px 18px;
+      background: var(--white);
+      border: 1.5px solid rgba(41, 29, 70, 0.1);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--navy);
+      box-shadow: 0 3px 10px rgba(41, 29, 70, 0.04);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .link-item:active {
+      transform: scale(0.98);
+    }
+
+    .link-item .title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .link-item .subtitle {
+      font-size: 0.78rem;
+      color: #7D768A;
+      margin-top: 3px;
+    }
+
+    .link-item.primary {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--copper);
+      box-shadow: 0 6px 16px rgba(41, 29, 70, 0.22);
+    }
+
+    .link-item.primary .subtitle {
+      color: #E2DFEA;
+    }
+
+    .badge {
+      background-color: var(--copper);
+      color: var(--white);
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 6px;
+      margin-left: 6px;
+      font-weight: bold;
+    }
+
+    .link-item.whatsapp {
+      border-color: #25D366;
+    }
+
+    .link-item.whatsapp .title {
+      color: #128C7E;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.78rem;
+      color: #9E99A8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="brand-avatar">
+      <img src="https://via.placeholder.com/150/291D46/FAF7F2?text=RONDA" alt="Ronda Social Club">
+    </div>
+
+    <h1>RONDA SOCIAL CLUB</h1>
+    <p class="tagline">İzmir'in Kültür, Sosyalleşme ve İngilizce Konuşma Topluluğu</p>
+
+    <div class="links">
+      
+      <!-- 1. Speaking Club Kayıt / Rezervasyon -->
+      <a href="https://wa.me/905xxxxxxxxx?text=Speaking%20Club%20rezervasyonu%20yaptırmak%20istiyorum" class="link-item primary" target="_blank">
+        <div class="title">
+          🎟 Bu Pazar Speaking Club Rezervasyon
+          <span class="badge">300 TL</span>
+        </div>
+        <div class="subtitle">19.00 - 21.00 | Alkolsüz Punch İkramı Dâhil</div>
+      </a>
+
+      <!-- 2. WhatsApp Topluluğu -->
+      <a href="https://chat.whatsapp.com/senin-whatsapp-linkin" class="link-item whatsapp" target="_blank">
+        <div class="title">💬 WhatsApp Topluluğuna Katıl</div>
+        <div class="subtitle">Etkinlik duyuruları ve haftalık sohbet akışı</div>
+      </a>
+
+      <!-- 3. Yakındaki Sosyal Etkinlikler -->
+      <a href="#" class="link-item">
+        <div class="title">🎬 Movie & Quiz Nights <span class="badge" style="background:#8C8797;">Yakında</span></div>
+        <div class="subtitle">Kültür ve eğlence buluşmaları</div>
+      </a>
+
+      <!-- 4. Instagram -->
+      <a href="https://instagram.com/rondasocialclub" class="link-item" target="_blank">
+        <div class="title">📸 Resmi Instagram Hesabımız</div>
+        <div class="subtitle">@rondasocialclub</div>
+      </a>
+
+    </div>
+
+    <footer>
+      © 2026 Ronda Social Club • İzmir
+    </footer>
+  </div>
+
+</body>
+</html>
