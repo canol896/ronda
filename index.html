@@ -6,7 +6,7 @@
   <title>Ronda Social Club | Link Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -468,7 +468,6 @@
       transform: scale(0.98);
     }
 
-    /* Kampanya Modal Piksel Art / Emoji Konteyner Tasarımı */
     .promo-art-container {
       width: 100%;
       background: linear-gradient(135deg, rgba(200, 125, 70, 0.2) 0%, rgba(138, 92, 230, 0.2) 100%);
@@ -477,7 +476,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 20px;
+      padding: 18px 14px;
       margin-bottom: 16px;
       position: relative;
       box-shadow: inset 0 0 20px rgba(200, 125, 70, 0.15);
@@ -488,6 +487,7 @@
       flex-direction: column;
       align-items: center;
       gap: 5px;
+      flex-shrink: 0;
     }
 
     .pixel-avatar {
@@ -517,11 +517,11 @@
       gap: 6px;
       text-align: center;
       flex: 1;
-      padding: 0 10px;
+      padding: 0 6px;
     }
 
     .pixel-heart-icon {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       animation: pulseHeart 1.5s ease-in-out infinite;
     }
 
@@ -531,7 +531,7 @@
     }
 
     .pixel-handshake-icon {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       animation: pulseHandshake 1.5s ease-in-out infinite;
     }
 
@@ -541,12 +541,12 @@
     }
 
     .discount-floating-tag {
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 800;
       background: var(--copper-glow);
       color: #0A0614;
-      padding: 4px 10px;
-      border-radius: 8px;
+      padding: 3px 8px;
+      border-radius: 7px;
       box-shadow: 0 0 10px rgba(200, 125, 70, 0.6);
       white-space: nowrap;
     }
@@ -695,7 +695,7 @@
           <div class="card-icon">📖</div>
           <div class="card-texts">
             <span class="card-title">Günün C1-C2 Kelimesi &amp; Mini Test</span>
-            <span class="card-desc">İleri düzey kelime dağarcığını test et</span>
+            <span class="card-desc">Gelişmiş C1-C2 kelime dağarcığını test et</span>
           </div>
         </div>
         <span class="badge-pill badge-vocab">Oyna / Keşfet</span>
@@ -845,7 +845,7 @@
     </div>
   </div>
 
-  <!-- Günün Kelimesi & Mini Test Modalı (C1-C2 Seviye Odaklı) -->
+  <!-- Günün C1-C2 Kelimesi & Mini Test Modalı -->
   <div id="vocabModal">
     <div class="vocab-modal-box">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
@@ -893,7 +893,7 @@
           <span style="font-size: 0.65rem; color: var(--cream-muted); font-weight: 700;">Sen</span>
         </div>
         
-        <!-- Orta Dikey Köprü: Kalp, Fiyat Etiketi, El Sıkışma (Hepsi Animasyonlu) -->
+        <!-- Orta Dikey Köprü: Kalp, 200 ₺ Etiketi, El Sıkışma (Animasyonlu) -->
         <div class="pixel-bridge-vertical">
           <div class="pixel-heart-icon">💖</div>
           <div class="discount-floating-tag">200 ₺ / Kişi</div>
@@ -1002,7 +1002,6 @@
       { r: 250, g: 247, b: 242 }
     ];
 
-    // C1 ve C2 Seviye Odaklı Seçkin Kelime Havuzu (100+ Kelime)
     const vocabDatabase = [
       { en: "Serendipity", tr: "şans eseri güzel şeyler keşfetme yeteneği", level: "C2" },
       { en: "Eloquent", tr: "güzel ve etkili konuşan, hitabeti güçlü", level: "C1" },
@@ -1189,7 +1188,6 @@
       setTimeout(() => { toast.classList.remove('show'); }, 3500);
     }
 
-    // Global Modal & Game Functions attached explicitly to window
     window.openBookingModal = function() { 
       const modal = document.getElementById('bookingModal');
       if (modal) modal.style.display = 'flex'; 
@@ -1256,10 +1254,10 @@
       if (resultArea) resultArea.innerHTML = '';
 
       if (currentVocabMode === 'tr-to-en') {
-        if (promptLabel) promptLabel.textContent = "Türkçe Anlamı Verilen Kelimenin İngilizcesi Nedir?";
+        if (promptLabel) promptLabel.textContent = "Türkçe Anlamı Verilen C1-C2 Kelimenin İngilizcesi Nedir?";
         if (targetDisplay) targetDisplay.textContent = `"${item.tr}"`;
       } else {
-        if (promptLabel) promptLabel.textContent = "İngilizce Kelimenin Türkçe Karşılığı Nedir?";
+        if (promptLabel) promptLabel.textContent = "İngilizce C1-C2 Kelimenin Türkçe Karşılığı Nedir?";
         if (targetDisplay) targetDisplay.textContent = item.en;
       }
     };
@@ -1316,10 +1314,10 @@
       document.body.removeChild(tempTextArea);
 
       window.closeBookingModal();
-      showToast("📋 Rezervasyon mesajın kopyalandı! Instagram'da yapıştırıp gönderebilirsin.");
+      showToast("📋 Rezervasyon mesajın kopyalandı! Instagram DM açılıyor...");
 
       setTimeout(() => {
-        window.open('https://instagram.com/rondasocialclub', '_blank');
+        window.open('https://ig.me/m/rondasocialclub', '_blank');
       }, 1200);
     };
 
@@ -1347,10 +1345,10 @@
       document.body.removeChild(tempTextArea);
 
       window.closePromoModal();
-      showToast("📋 Kampanya mesajın kopyalandı! Instagram'da yapıştırıp gönderebilirsin.");
+      showToast("📋 Kampanya mesajın kopyalandı! Instagram DM açılıyor...");
 
       setTimeout(() => {
-        window.open('https://instagram.com/rondasocialclub', '_blank');
+        window.open('https://ig.me/m/rondasocialclub', '_blank');
       }, 1200);
     };
 
