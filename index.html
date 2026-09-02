@@ -66,7 +66,7 @@
       width: 100%;
       height: 100%;
       display: block;
-      pointer-events: auto; /* Dokunma ve tıklama etkileşimi için */
+      pointer-events: auto;
       cursor: crosshair;
     }
 
@@ -188,7 +188,7 @@
       box-shadow: 0 0 32px rgba(200, 125, 70, 0.38), 0 10px 24px rgba(0, 0, 0, 0.75);
       cursor: pointer;
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      overflow: hidden; /* Dışarı taşan resim kısımlarını yuvarlak kesmek için */
+      overflow: hidden;
     }
 
     .logo-frame:hover {
@@ -201,12 +201,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.15); /* Fotoğrafı çembere tam oturtmak için ufak zoom */
+      transform: scale(1.05);
       transition: transform 0.3s ease;
     }
 
     .logo-frame:hover .logo-img {
-      transform: scale(1.22); /* Hover durumunda biraz daha yakınlaşır */
+      transform: scale(1.12);
     }
 
     .brand-title {
@@ -722,19 +722,16 @@
 </head>
 <body>
 
-  <!-- DERİN GECE LACİVERTİ & İNTERAKTİF KOZMİK ARKA PLAN -->
   <div class="cosmic-viewport">
     <div class="nebula-glow nebula-bottom"></div>
     <div class="nebula-glow nebula-top"></div>
     <canvas id="interactiveCanvas" width="1135" height="762"></canvas>
   </div>
 
-  <!-- Dokunma / Tıklama Etkileşim İpucu -->
   <div class="interaction-hint">
     <span>✨ Ekrana dokunarak kozmik yıldız patlamaları oluştur!</span>
   </div>
 
-  <!-- Hızlı Önizleme & Canlı Düzenleme Çubuğu -->
   <div class="admin-bar">
     <span>🪐 <strong>Gece Laciverti Hub</strong></span>
     <div style="display: flex; gap: 6px;">
@@ -745,9 +742,8 @@
 
   <div class="app-container">
     
-    <!-- YENİ GÖRSEL LOGO: Resmi logo.png olarak kaydettiğinizden emin olun! -->
+    <!-- RESMİ RONDA SOCIAL CLUB LOGOSU (logo.png) -->
     <div class="logo-frame" title="Dokun & Parlasın!" onclick="triggerLogoBurst(event)">
-      <!-- Yedek olarak görseli görebilmen için buraya dosya ismini yazdım, GitHub'da logo.png ismiyle yüklemelisin. -->
       <img src="logo.png" alt="Ronda Social Club" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/300x300/FAF7F2/C87D46?text=Ronda+Logo';">
     </div>
 
@@ -877,14 +873,12 @@
         <button onclick="closeAiModal()" style="background: transparent; border: none; color: #BBB; font-size: 1.3rem; cursor: pointer;">✕</button>
       </div>
 
-      <!-- Sekmeler -->
       <div class="ai-tabs">
         <button class="ai-tab-btn active" onclick="switchAiTab('icebreaker')">🎭 Buz Kırıcı Soru</button>
         <button class="ai-tab-btn" onclick="switchAiTab('level')">🎯 Seviye &amp; Masa</button>
         <button class="ai-tab-btn" onclick="switchAiTab('concierge')">💬 Kulübe Sor</button>
       </div>
 
-      <!-- Sekme 1: Icebreaker Soru Üretici -->
       <div id="tab-icebreaker" class="ai-tab-content">
         <label style="font-size: 0.76rem; font-weight: 700; color: var(--cream-muted);">Sohbet Teması Seç:</label>
         <select id="ai-topic" class="ai-select">
@@ -907,7 +901,6 @@
         </button>
       </div>
 
-      <!-- Sekme 2: Seviye ve Masa Önerisi -->
       <div id="tab-level" class="ai-tab-content" style="display: none;">
         <p style="font-size: 0.8rem; color: var(--cream-muted); margin-bottom: 8px;">
           İngilizce bir veya iki cümle yaz (örneğin kendini tanıt veya bu hafta sonu planını söyle). Gemini seviyeni ve hangi Ronda masasında daha rahat edeceğini analiz etsin:
@@ -918,7 +911,6 @@
         </button>
       </div>
 
-      <!-- Sekme 3: Kulüp Etkinlik Asistanı (Soru Sor) -->
       <div id="tab-concierge" class="ai-tab-content" style="display: none;">
         <p style="font-size: 0.8rem; color: var(--cream-muted); margin-bottom: 8px;">
           Pazar seansı, mekan (115 Karma Atölye), alkolsüz punch ikramı veya arkadaş kampanyası hakkında merak ettiğini sor:
@@ -929,12 +921,10 @@
         </button>
       </div>
 
-      <!-- AI Sonuç Alanı -->
       <div id="aiResultBox" class="ai-result-card"></div>
     </div>
   </div>
 
-  <!-- Canlı Link Düzenleme Penceresi (Modal) -->
   <div id="editModal">
     <div class="modal-box">
       <h3>⚡ Linkleri &amp; Bilgileri Güncelle</h3>
@@ -962,9 +952,6 @@
   </div>
 
   <script>
-    /* -------------------------------------------------------------
-       İNTERAKTİF KOZMİK MOTOR: ÇAPRAZ AKIŞ & DOKUNMATİK YILDIZ PATLAMASI
-       ------------------------------------------------------------- */
     const canvas = document.getElementById('interactiveCanvas');
     const ctx = canvas.getContext('2d');
 
@@ -974,9 +961,8 @@
     let interactiveSparks = [];
     let rippleRings = [];
 
-    const AMBIENT_COUNT = 65; // Arka planda sürekli çapraz süzülen gök cismi sayısı
+    const AMBIENT_COUNT = 65;
 
-    // Retina & Yüksek Piksel Yoğunluğu Ayarı
     function resizeCanvas() {
       const dpr = window.devicePixelRatio || 1;
       width = window.innerWidth;
@@ -989,20 +975,16 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    // Renk Havuzu: Ronda Sıcak Bakır, Amber Parıltısı, Morumsu Gece Işıltısı ve Saf Yıldız Beyazı
     const PALETTE = [
-      { r: 200, g: 125, b: 70 },   // Ronda Sıcak Bakır (#C87D46)
-      { r: 255, g: 175, b: 110 },  // Sıcak Şampanya / Amber
-      { r: 145, g: 100, b: 230 },  // Gece Kozmik Moru
-      { r: 255, g: 230, b: 190 },  // Yıldız Işıltısı Beyazı
-      { r: 230, g: 90,  b: 40 }    // Canlı Bakır Közü
+      { r: 200, g: 125, b: 70 },
+      { r: 255, g: 175, b: 110 },
+      { r: 145, g: 100, b: 230 },
+      { r: 255, g: 230, b: 190 },
+      { r: 230, g: 90,  b: 40 }
     ];
 
     const TYPES = ['sparkle', 'star', 'star', 'ring', 'dust'];
 
-    /* -------------------------------------------------------------
-       1. ARKA PLAN ÇAPRAZ AKIŞ CİSİMLERİ (SOL ALT -> SAĞ ÜST)
-       ------------------------------------------------------------- */
     class AmbientBody {
       constructor(initial = false) {
         this.reset(initial);
@@ -1013,7 +995,6 @@
           this.x = Math.random() * width;
           this.y = Math.random() * height;
         } else {
-          // Sol alt kenardan veya sol kenarın altından doğuş
           if (Math.random() < 0.5) {
             this.x = -25;
             this.y = height * 0.35 + Math.random() * (height * 0.75);
@@ -1023,7 +1004,6 @@
           }
         }
 
-        // Çapraz akış hızı (Sağa +, Yukarı -)
         const speed = 0.35 + Math.random() * 0.65;
         this.vx = speed * (0.8 + Math.random() * 0.35);
         this.vy = -speed * (0.85 + Math.random() * 0.4);
@@ -1045,7 +1025,6 @@
         this.twinkleAngle += this.twinkleSpeed;
         this.rotation += this.rotSpeed;
 
-        // Ekrandan çıkınca yeniden doğur
         if (this.x > width + 45 || this.y < -45) {
           this.reset(false);
         }
@@ -1060,7 +1039,6 @@
         ctx.rotate(this.rotation);
 
         if (this.type === 'sparkle') {
-          // 4 Köşeli Parlayan Gece Yıldızı
           ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha})`;
           ctx.shadowBlur = 12;
           ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.8)`;
@@ -1075,14 +1053,12 @@
           ctx.closePath();
           ctx.fill();
 
-          // Merkez Çekirdek
           ctx.beginPath();
           ctx.arc(0, 0, this.size * 0.5, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(255, 255, 255, ${curAlpha * 0.95})`;
           ctx.fill();
 
         } else if (this.type === 'ring') {
-          // Halkalı Minik Gezegen / Gök Cismi
           ctx.beginPath();
           ctx.arc(0, 0, this.size * 1.1, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha * 0.8})`;
@@ -1097,7 +1073,6 @@
           ctx.stroke();
 
         } else if (this.type === 'dust') {
-          // Kozmik Toz Parçacığı
           ctx.beginPath();
           ctx.arc(0, 0, this.size * 0.85, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha * 0.5})`;
@@ -1106,7 +1081,6 @@
           ctx.fill();
 
         } else {
-          // Parlak Dairesel Yıldız
           ctx.beginPath();
           ctx.arc(0, 0, this.size, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha})`;
@@ -1119,19 +1093,16 @@
       }
     }
 
-    /* -------------------------------------------------------------
-       2. İNTERAKTİF DOKUNMATİK PARÇACIKLAR (HER TIKLAMADA DOĞAR)
-       ------------------------------------------------------------- */
     class InteractiveSpark {
       constructor(x, y) {
         this.x = x;
         this.y = y;
         const angle = Math.random() * Math.PI * 2;
-        const velocity = 2.0 + Math.random() * 6.5; // Dışarıya fırlama hızı
+        const velocity = 2.0 + Math.random() * 6.5;
         this.vx = Math.cos(angle) * velocity;
         this.vy = Math.sin(angle) * velocity;
-        this.friction = 0.94; // Zamanla yavaşlama
-        this.gravity = -0.04; // Hafif yukarı yükselme etkisi
+        this.friction = 0.94;
+        this.gravity = -0.04;
 
         this.size = 2.2 + Math.random() * 4.5;
         this.color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
@@ -1177,7 +1148,6 @@
       }
     }
 
-    // Dokunulan noktada yayılan enerji şok halkası
     class ShockwaveRing {
       constructor(x, y) {
         this.x = x;
@@ -1186,7 +1156,7 @@
         this.maxRadius = 65 + Math.random() * 45;
         this.life = 1.0;
         this.decay = 0.035;
-        this.color = PALETTE[Math.floor(Math.random() * 2)]; // Sıcak bakır & şampanya
+        this.color = PALETTE[Math.floor(Math.random() * 2)];
       }
 
       update() {
@@ -1209,7 +1179,6 @@
       }
     }
 
-    // Tıklama veya Dokunma Olayı Tetikleyici
     function createCosmicBurst(x, y, count = 22) {
       rippleRings.push(new ShockwaveRing(x, y));
       for (let i = 0; i < count; i++) {
@@ -1217,7 +1186,6 @@
       }
     }
 
-    // Logoya tıklandığında süper patlama
     function triggerLogoBurst(e) {
       const rect = e.currentTarget.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
@@ -1226,16 +1194,13 @@
       showToast("✨ Ronda Social Club enerjisi aktive edildi!");
     }
 
-    // Ekranda herhangi bir boş yere tıklama veya dokunma
     window.addEventListener('pointerdown', (e) => {
-      // Eğer tıklanan yer modalın içi veya düzenleme butonları değilse patlama yarat
       const target = e.target;
       if (!target.closest('input') && !target.closest('button') && !target.closest('#editModal .modal-box')) {
         createCosmicBurst(e.clientX, e.clientY, 20);
       }
     });
 
-    // Mobil swipe/dokunarak sürükleme desteği
     window.addEventListener('touchmove', (e) => {
       if (e.touches && e.touches[0] && Math.random() < 0.4) {
         const touch = e.touches[0];
@@ -1243,7 +1208,6 @@
       }
     }, { passive: true });
 
-    // Havuzları Doldur
     for (let i = 0; i < AMBIENT_COUNT; i++) {
       ambientParticles.push(new AmbientBody(true));
     }
@@ -1251,13 +1215,11 @@
     function renderLoop() {
       ctx.clearRect(0, 0, width, height);
 
-      // 1. Çapraz Akış Cisimlerini Çiz
       for (let i = 0; i < ambientParticles.length; i++) {
         ambientParticles[i].update();
         ambientParticles[i].draw();
       }
 
-      // 2. Şok Dalgalarını Çiz
       for (let i = rippleRings.length - 1; i >= 0; i--) {
         rippleRings[i].update();
         rippleRings[i].draw();
@@ -1266,7 +1228,6 @@
         }
       }
 
-      // 3. Etkileşim Kıvılcımlarını Çiz
       for (let i = interactiveSparks.length - 1; i >= 0; i--) {
         interactiveSparks[i].update();
         interactiveSparks[i].draw();
@@ -1280,7 +1241,6 @@
 
     renderLoop();
 
-    // Toast Bildirim Sistemi (alert() yerine zarif bildirim)
     function showToast(message) {
       const toast = document.getElementById('toastNotification');
       toast.textContent = message;
@@ -1290,7 +1250,6 @@
       }, 3200);
     }
 
-    // Canlı Düzenleme Fonksiyonları
     function openEditor() {
       document.getElementById('editModal').style.display = 'flex';
     }
@@ -1316,9 +1275,6 @@
       showToast('✅ Değişiklikler uygulandı! "Kodu Kopyala" ile GitHub\'a yapıştırabilirsin.');
     }
 
-    /* -------------------------------------------------------------
-       GEMINI API ENTEGRASYONU: RONDA AI SPEAKING KOÇU & ASİSTANI
-       ------------------------------------------------------------- */
     let currentAiTab = 'icebreaker';
 
     function openAiModal() {
@@ -1343,9 +1299,8 @@
       resultBox.innerHTML = '';
     }
 
-    // Üstel geri çekilme (exponential backoff) ile güvenli Gemini fetch çağrısı
     async function callGeminiApi(systemPrompt, userQuery, retries = 3, delay = 1000) {
-      const apiKey = ""; // Canvas çalışma ortamı API anahtarını otomatik sağlar
+      const apiKey = "";
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
 
       const payload = {
@@ -1378,7 +1333,6 @@
       throw new Error("Gemini yanıt veremedi.");
     }
 
-    // 1. Buz Kırıcı Soru Üretici
     async function generateIcebreaker() {
       const topic = document.getElementById('ai-topic').value;
       const level = document.getElementById('ai-level').value;
@@ -1407,7 +1361,6 @@ Görevin katılımcının seçtiği tema ve seviyeye göre bu Pazar masada arkad
       }
     }
 
-    // 2. Seviye ve Masa Önerisi
     async function analyzeUserLevel() {
       const sentence = document.getElementById('ai-user-sentence').value.trim();
       const btn = document.getElementById('btn-analyze-level');
@@ -1440,7 +1393,6 @@ Görevin katılımcının seçtiği tema ve seviyeye göre bu Pazar masada arkad
       }
     }
 
-    // 3. Kulüp Etkinlik Asistanı
     async function askClubConcierge() {
       const question = document.getElementById('ai-question-input').value.trim();
       const btn = document.getElementById('btn-ask-concierge');
@@ -1493,7 +1445,7 @@ Soruya nazik, samimi, Türkçe ve kulübün prestijli havasına uygun cevap ver.
         document.execCommand('copy');
         showToast('📋 Tüm sayfa kodu panoya kopyalandı! GitHub index.html dosyana yapıştırabilirsin.');
       } catch (err) {
-        showToast('Kopyalama izni verilmedi, kodu doğrudan kopyalayabilirsin.');
+        showToast('Kopyalama izni verilmedi, kodu doğrudan editörden alabilirsin.');
       }
       document.body.removeChild(tempTextarea);
     }
