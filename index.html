@@ -1,587 +1,6 @@
 <!DOCTYPE html>
-<html lang="tr"><head><script data-bard-client-injected="true">(function(firebaseConfig, initialAuthToken, appId) {
-        window.__firebase_config = firebaseConfig;
-        window.__initial_auth_token = initialAuthToken;
-        window.__app_id = appId;
-            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjExNjRiNzdiNDMzZDdhMDAyMWI4NjE4YjhjYTU3ZTMyZGI5MWUxMTMiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwNDExNDgzOTQyMjMxMDAyMjAxMiIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjX2U1ZmMzN2QxOTAyZTFkNDlfaW5kZXguaHRtbC0zMTQifSwiZXhwIjoxNzg4MzkyMzI4LCJpYXQiOjE3ODgzODg3MjgsImFsZyI6IlJTMjU2In0.hYIQHNGTd23hhSAyvHic0qBlDGHCtZUk68EAAFjhC6tvhyplIHOyGkAckl8mPuHv2WxZAt5rtgAYQokUsDM43Sxedem9ndxJTTMmUfkt16RwsEFQ_ENI3p7e9ptH_1LWcChPx3uC4pG5jmtWQMeRxMp9wrzRxb_318zRuXXwECh7-ZpW--K8LLCK08VKgNhgnrueczJwJ-sNlibtyy-x7icbhNCxNnF1O2v-AdJcKC2C-GigRTdlAUIsMhE7lmsJe2o9Gl1u3aijU81xj7vXis70f-6dSUw5oh5Xip_j6-jGv_ENCOVhoR-58VabfLOAITZop-9Hd2PyFZyzeh5-_A","c_e5fc37d1902e1d49_index.html-314")</script><script data-bard-client-injected="true">(function(){'use strict';window.addEventListener("message",a=>{a.data&&a.data.type==="SUPPLEMENTAL_DATA_UPDATE"&&window.dispatchEvent(new CustomEvent("supplementaldataupdate",{detail:a.data.data}))});}).call(this);
-</script><script data-bard-client-injected="true">(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var n=l(this);
-function p(a,b){if(b)a:{var c=n;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&h(c,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(d){return a.next(d)}function c(d){return a.throw(d)}return new Promise(function(d,e){function f(g){g.done?d(g.value):Promise.resolve(g.value).then(b,c).then(f,e)}f(a.next())})}function t(a){return r(a())}
-p("Object.values",function(a){return a?a:function(b){var c=[],d;for(d in b)Object.prototype.hasOwnProperty.call(b,d)&&c.push(b[d]);return c}});p("Array.prototype.includes",function(a){return a?a:function(b,c){var d=this;d instanceof String&&(d=String(d));var e=d.length;c=c||0;for(c<0&&(c=Math.max(c+e,0));c<e;c++){var f=d[c];if(f===b||Object.is(f,b))return!0}return!1}});/*
-
- MIT License
-
- Copyright (c) 2017-2023 W.Y.
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
-
-*/
-function u(a,b){var c=a.style;b.backgroundColor&&(c.backgroundColor=b.backgroundColor);b.width&&(c.width=`${b.width}px`);b.height&&(c.height=`${b.height}px`);var d=b.style;d!=null&&Object.keys(d).forEach(e=>{c[e]=d[e]})};var v=(()=>{var a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){var b=[];for(let c=0,d=a.length;c<d;c++)b.push(a[c]);return b}let x=null;function y(a={}){return x?x:a.u?x=a.u:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
-function A(a,b={}){var c;if(!(c=b.width)){c=z(a,"border-left-width");var d=z(a,"border-right-width");c=a.clientWidth+c+d}(b=b.height)||(b=z(a,"border-top-width"),d=z(a,"border-bottom-width"),b=a.clientHeight+b+d);return{width:c,height:b}}function B(a){return new Promise((b,c)=>{var d=new Image;d.onload=()=>{d.decode().then(()=>{requestAnimationFrame(()=>b(d))})};d.onerror=c;d.crossOrigin="anonymous";d.decoding="async";d.src=a})}
-function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
-function D(a,b,c){return t(function*(){var d=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");d.setAttribute("width",`${b}`);d.setAttribute("height",`${c}`);d.setAttribute("viewBox",`0 0 ${b} ${c}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");d.appendChild(e);e.appendChild(a);return C(d)})}
-var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(c=>{var d=a.getPropertyValue(c),e=a.getPropertyPriority(c);return`${c}: ${d}${e?" !important":""};`}).join(" ")}
-function G(a,b,c,d){a=window.getComputedStyle(a,c);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;c=`.${f}:${c}`;a.cssText?(d=a.getPropertyValue("content"),d=`${a.cssText} content: '${d.replace(/'|"/g,"")}';`):d=F(a,d);g.call(e,document.createTextNode(`${c}{${d}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,c){return t(function*(){var d=yield fetch(a,b);if(d.status===404)throw Error(`Resource "${d.url}" not found`);var e=yield d.blob();return new Promise((f,g)=>{var k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(c({v:d,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function aa(a,b,c){var d=a.replace(/\?.*/,"");c&&(d=a);/ttf|otf|eot|woff2?/i.test(d)&&(d=d.replace(/.*\//,""));return b?`[${b}]${d}`:d}
-function K(a,b,c){return t(function*(){var d=aa(a,b,c.F);if(J[d]!=null)return J[d];c.B&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());try{let f=yield I(a,c.l,({v:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});var e=`data:${b};base64,${f}`}catch(f){e=c.o||""}return J[d]=e})};const L={R:"application/font-woff",S:"application/font-woff",O:"application/font-truetype",C:"application/vnd.ms-fontobject",J:"image/png",H:"image/jpeg",G:"image/jpeg",D:"image/gif",N:"image/tiff",M:"image/svg+xml",P:"image/webp"};function M(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function ba(a){return t(function*(){var b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function ca(a,b){return t(function*(){if(a.currentSrc){var c=document.createElement("canvas");let d=c.getContext("2d");c.width=a.clientWidth;c.height=a.clientHeight;d==null||d.drawImage(a,0,0,c.width,c.height);c=c.toDataURL();return B(c)}c=a.poster;c=yield K(c,L[M(c).toLowerCase()]||"",b);return B(c)})}
-function da(a,b){return t(function*(){try{let c;if(a==null?0:(c=a.contentDocument)==null?0:c.body)return yield N(a.contentDocument.body,b,!0)}catch(c){}return a.cloneNode(!1)})}function ea(a,b){return t(function*(){return E(a,HTMLCanvasElement)?ba(a):E(a,HTMLVideoElement)?ca(a,b):E(a,HTMLIFrameElement)?da(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
-function fa(a,b,c){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;var d=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)d=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))d=w(a.contentDocument.body.childNodes);else{let f;d=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(d.length===0||E(a,HTMLVideoElement))return b;yield d.reduce((e,f)=>e.then(()=>N(f,c)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
-return b})}function ha(a,b,c){var d=b.style;if(d){var e=window.getComputedStyle(a);e.cssText?(d.cssText=e.cssText,d.transformOrigin=e.transformOrigin):y(c).forEach(f=>{var g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);d.setProperty(f,g,e.getPropertyPriority(f))})}}
-function ia(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(c=>a.value===c.getAttribute("value")))&&b.setAttribute("selected","")}
-function ja(a,b){return t(function*(){var c=a.querySelectorAll?a.querySelectorAll("use"):[];if(c.length===0)return a;var d={};for(var e=0;e<c.length;e++){var f=c[e].getAttribute("xlink:href");if(f){let g=document.querySelector(f);a.querySelector(f)||!g||d[f]||(d[f]=yield N(g,b,!0))}}c=Object.values(d);if(c.length){d=document.createElementNS("http://www.w3.org/1999/xhtml","svg");d.setAttribute("xmlns","http://www.w3.org/1999/xhtml");d.style.position="absolute";d.style.width="0";d.style.height="0";
-d.style.overflow="hidden";d.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");d.appendChild(e);for(f=0;f<c.length;f++)e.appendChild(c[f]);a.appendChild(d)}return a})}
-function N(a,b,c){return t(function*(){return c||!b.filter||b.filter(a)?Promise.resolve(a).then(d=>ea(d,b)).then(d=>fa(a,d,b)).then(d=>{E(d,Element)&&(ha(a,d,b),G(a,d,":before",b),G(a,d,":after",b),E(a,HTMLTextAreaElement)&&(d.textContent=a.value),E(a,HTMLInputElement)&&d.setAttribute("value",a.value),ia(a,d));return d}).then(d=>ja(d,b)):null})};const O=/url\((['"]?)([^'"]+?)\1\)/g,ka=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,la=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ma(a){var b=[];a.replace(O,(c,d,e)=>{b.push(e);return c});return b.filter(c=>!H(c))}
-function na(a,b,c,d){return t(function*(){try{let e=c?(new URL(b,c||void 0)).toString():b,f;f=yield K(e,L[M(b).toLowerCase()]||"",d);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function oa(a,{K:b}){return b?a.replace(la,c=>{for(;;){let [d,,e]=ka.exec(c)||[];if(!e)return"";if(e===b)return`src: ${d};`}}):a}
-function P(a,b,c){return t(function*(){if(a.search(O)===-1)return a;var d=oa(a,c);return ma(d).reduce((e,f)=>e.then(g=>na(g,f,b,c)),Promise.resolve(d))})};function Q(a,b,c){return t(function*(){var d,e=(d=b.style)==null?void 0:d.getPropertyValue(a);return e?(d=yield P(e,null,c),b.style.setProperty(a,d,b.style.getPropertyPriority(a)),!0):!1})}function pa(a,b){return t(function*(){(yield Q("background",a,b))||(yield Q("background-image",a,b));(yield Q("mask",a,b))||(yield Q("-webkit-mask",a,b))||(yield Q("mask-image",a,b))||(yield Q("-webkit-mask-image",a,b))})}
-function qa(a,b){return t(function*(){var c=E(a,HTMLImageElement);if(c&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var d=c?a.src:a.href.baseVal,e=yield K(d,L[M(d).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.h?(...k)=>{try{f(b.h(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");c?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
-function ra(a,b){return t(function*(){var c=w(a.childNodes).map(d=>R(d,b));yield Promise.all(c).then(()=>a)})}function R(a,b){return t(function*(){E(a,Element)&&(yield pa(a,b),yield qa(a,b),yield ra(a,b))})};const S={};function T(a){return t(function*(){var b=S[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return S[a]=b})}function U(a,b){return t(function*(){var c=a.cssText,d=/url\(["']?([^"')]+)["']?\)/g,e=(c.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){var g=f.replace(d,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.l,({result:k})=>{c=c.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>c)})}
-function V(a){if(a==null)return[];var b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var c=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var d=c.exec(a);if(d===null)break;b.push(d[0])}a=a.replace(c,"");c=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(d=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=c.exec(a);if(e===null)if(e=d.exec(a),e===null)break;else c.lastIndex=d.lastIndex;else d.lastIndex=
-c.lastIndex;b.push(e[0])}return b}
-function sa(a,b){return t(function*(){var c=[],d=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=T(f.href).then(m=>U(m,b)).then(m=>V(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Fa){}})).catch(()=>{});d.push(f)}})}catch(f){let g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&d.push(T(e.href).then(k=>U(k,b)).then(k=>V(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
-{}))}});return Promise.all(d).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{c.push(f)})}catch(f){}});return c})})}function ta(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(O)!==-1)}function ua(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var c=w(a.ownerDocument.styleSheets);c=yield sa(c,b);return ta(c)})}
-function va(a){function b(d){(d.style.fontFamily||getComputedStyle(d).fontFamily).split(",").forEach(e=>{c.add(e.trim().replace(/["']/g,""))});Array.from(d.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}var c=new Set;b(a);return c}function wa(a,b){return t(function*(){var c=yield ua(a,b),d=va(a);return(yield Promise.all(c.filter(e=>d.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>P(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
-function xa(a,b){return t(function*(){var c=b.m!=null?b.m:b.A?null:yield wa(a,b);if(c){let d=document.createElement("style");d.appendChild(document.createTextNode(c));a.firstChild?a.insertBefore(d,a.firstChild):a.appendChild(d)}})};function ya(a,b={}){return t(function*(){var {width:c,height:d}=A(a,b),e=yield N(a,b,!0);yield xa(e,b);yield R(e,b);u(e,b);return yield D(e,c,d)})}
-function za(a,b={}){return t(function*(){var {width:c,height:d}=A(a,b),e=yield ya(a,b);e=yield B(e);var f=document.createElement("canvas"),g=f.getContext("2d"),k=b.I||window.devicePixelRatio||1,m=b.j||c,q=b.i||d;f.width=m*k;f.height=q*k;!b.L&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384));
-f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function Aa(a,b={}){return t(function*(){return(yield za(a,b)).toDataURL()})};const Ba=["gemini.google.com","corp.google.com","proxy.googlers.com"];function W(){return document.body.querySelectorAll('[class*="animate"]').length>0}function X(a,b){var c=document.createElement("canvas");c.width=a;c.height=b;return c.toDataURL("image/png")}const Y=X(1,1);
-function Z(a){return t(function*(){try{return yield Aa(a,{j:a.offsetWidth,i:a.offsetHeight,A:!0,filter:b=>{if(b.tagName==="IMG"){let c=b.getAttribute("src");if(!c||c.trim()===""||b.style.display==="none")return!1}return!0},o:Y,h:()=>Y})}catch(b){return X(a.offsetWidth,a.offsetHeight)}})}
-function Ca(){return t(function*(){var a=document.body.offsetWidth,b=document.body.offsetHeight,c=document.body.cloneNode(!0);c.querySelectorAll('[class*="animate"]').forEach(d=>{d.classList.remove(...Array.from(d.classList).filter(e=>e.startsWith("animate")))});c.style.width=`${a}px`;c.style.height=`${b}px`;return c})}
-function Da(a){return t(function*(){var b=document.body;if(W()){var c=yield Ca();b=c;document.body.appendChild(c)}c=yield Z(b);W()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:c,topOffset:document.documentElement.scrollTop},a.origin)})}function Ea(a){return t(function*(){var b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
-window.addEventListener("message",a=>t(function*(){if(Ba.some(c=>a.origin.includes(c))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Da(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ea(a)))}}));
-})();</script><script data-bard-client-injected="true">(function() {
-  // Ensure this script is executed only once
-  if (window.firebaseAuthBridgeScriptLoaded) {
-    return;
-  }
-  window.firebaseAuthBridgeScriptLoaded = true;
-
-  let nextTokenPromiseId = 0;
-
-  // Stores { resolve, reject } for ongoing token requests
-  const pendingTokenPromises = {};
-
-  // Listen for messages from the Host Application
-  window.addEventListener('message', function(event) {
-
-    const messageData = event.data;
-
-  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
-      const { success, token, error, promiseId } = messageData ?? {};
-      if (pendingTokenPromises[promiseId]) {
-        if (success) {
-          pendingTokenPromises[promiseId].resolve(token);
-        } else {
-          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
-        }
-        delete pendingTokenPromises[promiseId];
-      }
-    }
-  });
-
-  // Expose a function for the Generated App to request a new Firebase token
-  window.requestNewFirebaseToken = function() {
-    const currentPromiseId = nextTokenPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingTokenPromises[currentPromiseId] = { resolve, reject };
-    });
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({
-        type: 'REQUEST_NEW_FIREBASE_TOKEN',
-        promiseId: currentPromiseId
-      }, '*');
-    } else {
-      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
-      delete pendingTokenPromises[currentPromiseId];
-    }
-    return promise;
-  };
-})();</script><script data-bard-client-injected="true">
-let realOriginalGetUserMedia = null;
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
-}
-
-(function() {
-  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
-    try {
-      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
-        get: function() {
-          return undefined; // Or throw an error
-        },
-        configurable: false
-      });
-    } catch (error) {
-      console.error("Error defining prototype getter:", error);
-    }
-  }
-})();
-
-(function() {
-  const pendingMediaResolvers = {};
-  let nextMediaPromiseId = 0;
-
-  function requestMediaPermissions(constraints) {
-    const mediaPromiseId = nextMediaPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingMediaResolvers[mediaPromiseId] = (granted) => {
-        delete pendingMediaResolvers[mediaPromiseId];
-        resolve(granted);
-      };
-    });
-
-    window.parent.postMessage({
-      type: 'requestMediaPermission',
-      constraints: constraints,
-      promiseId: mediaPromiseId,
-    }, '*');
-
-    return promise;
-  }
-
-  let originalGetUserMedia = realOriginalGetUserMedia;
-
-  function interceptGetUserMedia() {
-    if (navigator.mediaDevices) {
-      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
-        value: function(constraints) {
-          return requestMediaPermissions(constraints).then((granted) => {
-            if (granted) {
-              if (originalGetUserMedia) {
-                return originalGetUserMedia(constraints);
-              } else {
-                throw new Error("Original getUserMedia not available.");
-              }
-            } else {
-              throw new DOMException('Permission denied', 'NotAllowedError');
-            }
-          });
-        },
-        writable: false,
-        configurable: false
-      });
-    }
-  }
-
-  interceptGetUserMedia();
-
-  const observer = new MutationObserver(function(mutationsList, observer) {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'childList' && mutation.addedNodes) {
-        mutation.addedNodes.forEach(node => {
-          if (node === navigator.mediaDevices) {
-            interceptGetUserMedia();
-          }
-        });
-      }
-    }
-  });
-
-  function interceptSpeechRecognition() {
-    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
-      return;
-    }
-
-    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    const SpeechRecognitionWrapper = function(...args) {
-      const recognizer = new OriginalSpeechRecognition(...args);
-      const originalStart = recognizer.start.bind(recognizer);
-
-      recognizer.start = function() {
-        requestMediaPermissions({ audio: true }).then(granted => {
-          if (granted) {
-            originalStart();
-          } else {
-            const errorEvent = new SpeechRecognitionErrorEvent('error');
-            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
-            recognizer.dispatchEvent(errorEvent);
-          }
-        });
-      };
-
-      return recognizer;
-    };
-
-    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
-    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
-
-    if (window.SpeechRecognition) {
-      window.SpeechRecognition = SpeechRecognitionWrapper;
-    }
-    if (window.webkitSpeechRecognition) {
-      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
-    }
-  }
-
-  interceptSpeechRecognition();
-
-  window.addEventListener('message', function(event) {
-    if (event.data) {
-      if (event.data.type === 'resolveMediaPermission') {
-        const { promiseId, granted } = event.data;
-        if (pendingMediaResolvers[promiseId]) {
-          pendingMediaResolvers[promiseId](granted);
-        }
-      }
-    }
-  });
-
-})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}" data-bard-client-injected="true">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
-function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
-
- Copyright The Closure Library Authors.
- SPDX-License-Identifier: Apache-2.0
-*/
-function A(b,d){function e(){}e.prototype=d.prototype;b.j=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.h=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
-let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
-null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.i="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
-c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
-"x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
-Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
-(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
-url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
-</script><script data-bard-client-injected="true">((function(modelInformation) {
-  const originalFetch = window.fetch;
-  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
-  let googleLlmBaseApiUrls = [
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
-  ];
-  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-    );
-  });
-  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-  modelInformation.deprecatedGenerateImageModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-  modelInformation.deprecatedImageTransformModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-
-  const pendingFetchResolvers = {};
-  let nextPromiseId = 0;
-
-  function handleStringInput(input, optionsArgument) {
-    const actualUrl = input;
-    const fetchCallArgs = [actualUrl, optionsArgument];
-    const effectiveOptions = optionsArgument || {};
-    const bodyForApiKeyCheck = effectiveOptions.body;
-    const bodyForPostMessage = effectiveOptions.body;
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  function handleRequestInput(input, optionsArgument) {
-    const actualUrl = input.url;
-    const fetchCallArgs = [input, optionsArgument];
-    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (optionsArgument) {
-      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
-      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
-      if ('body' in optionsArgument) {
-        bodyForApiKeyCheck = optionsArgument.body;
-        bodyForPostMessage = optionsArgument.body;
-      } else {
-        bodyForApiKeyCheck = undefined;
-        bodyForPostMessage = input.body;
-      }
-    } else {
-      bodyForApiKeyCheck = undefined;
-      bodyForPostMessage = input.body;
-    }
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  window.fetch = function(input, optionsArgument) {
-    let actualUrl;
-    let fetchCallArgs;
-    let effectiveOptions = {};
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (typeof input === 'string') {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
-    } else if (input instanceof Request) {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
-    } else {
-      return originalFetch.apply(window, [input, optionsArgument]);
-    }
-
-    effectiveOptions.method = effectiveOptions.method || 'GET';
-    if (!effectiveOptions.headers) {
-      effectiveOptions.headers = new Headers();
-    }
-
-
-    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
-      let apiKeyIsNull = true;
-
-      const regex = new RegExp("models/([^:]+)");
-      const modelNameMatch = actualUrl.match(regex);
-      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
-
-
-      try {
-        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
-        const apiKeyParam = urlObject.searchParams.get('key');
-        if (apiKeyParam) {
-          apiKeyIsNull = false;
-        }
-      } catch (e) {
-        // Continue checks even if URL parsing fails
-      }
-
-      if (apiKeyIsNull && effectiveOptions.headers) {
-        const h = new Headers(effectiveOptions.headers);
-        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
-        if (apiKeyHeaderValue) {
-          apiKeyIsNull = false;
-          return originalFetch.apply(window, fetchCallArgs);
-        }
-      }
-
-      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
-        try {
-          const bodyData = JSON.parse(bodyForApiKeyCheck);
-          if (bodyData && bodyData.apiKey) {
-            apiKeyIsNull = false;
-            return originalFetch.apply(window, fetchCallArgs);
-          }
-        } catch (e) {
-          // Ignore JSON parsing errors
-        }
-      }
-
-      if(apiKeyIsNull) {
-        const promiseId = nextPromiseId++;
-        const promise = new Promise((resolve) => {
-          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
-            delete pendingFetchResolvers[promiseId];
-            resolve(resolvedResponse);
-          };
-        });
-
-        let serializedBodyForPostMessage;
-        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
-            serializedBodyForPostMessage = bodyForPostMessage;
-        } else if (bodyForPostMessage instanceof ReadableStream) {
-            serializedBodyForPostMessage = null;
-        } else {
-            try {
-                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
-            } catch (e) {
-                serializedBodyForPostMessage = null;
-            }
-        }
-
-        const messageOptions = {
-            method: effectiveOptions.method,
-            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
-            body: serializedBodyForPostMessage
-        };
-
-        window.parent.postMessage({
-          type: 'requestFetch',
-          url: actualUrl,
-          modelName: modelName,
-          options: messageOptions,
-          promiseId: promiseId,
-        }, '*');
-
-        return promise;
-      }
-      return originalFetch.apply(window, fetchCallArgs);
-    }
-    return originalFetch.apply(window, fetchCallArgs);
-  };
-
-  window.addEventListener('message', function(event) {
-    if (event.data && event.data.type === 'resolveFetch') {
-      const { promiseId, response } = event.data;
-      if (pendingFetchResolvers[promiseId]) {
-        try {
-          const reconstructedResponse = new Response(response.body, {
-            status: response.status,
-            statusText: response.statusText,
-            headers: new Headers(response.headers),
-          });
-          pendingFetchResolvers[promiseId](reconstructedResponse);
-        } catch (error) {
-          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
-        }
-      }
-    }
-  });
-
-}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-3.1-flash-image","imageTransformModelName":"gemini-3-pro-image","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"],"deprecatedGenerateImageModelNames":["gemini-2.5-flash-image-preview","gemini-2.5-flash-image","gemini-3.1-flash-image-preview"],"deprecatedImageTransformModelNames":["gemini-3-pro-image-preview-11-2025"]})</script><script data-bard-client-injected="true">(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
-</script><script data-bard-client-injected="true">(function() {
-  const originalConsoleLog = console.log;
-  const originalConsoleError = console.error;
-
-    /**
-   * Normalizes an error event or a promise rejection reason into a structured error object.
-   * @param {*} errorEventOrReason The error object or reason.
-   * @return {object} Structured error data { message, name, stack }.
-   */
-  function getErrorObject(errorEventOrReason) {
-    if (errorEventOrReason instanceof Error) {
-      return {
-        message: errorEventOrReason.message,
-        name: errorEventOrReason.name,
-        stack: errorEventOrReason.stack,
-      };
-    }
-    // Fallback for non-Error objects.
-    try {
-      return {
-        message: JSON.stringify(errorEventOrReason),
-        name: 'UnknownErrorType',
-        stack: null,
-      };
-    } catch (e) {
-      return {
-        message: String(errorEventOrReason),
-        name: 'UnknownErrorTypeNonStringifiable',
-        stack: null,
-      };
-    }
-  }
-
-  /**
-   * Converts an array of arguments (from log/error) into a single string.
-   * Handles Error objects specially to include their message and stack.
-   * @param {Array<*>} args - Arguments passed to console methods.
-   * @return {string} A string representation of the arguments.
-   */
-  function stringifyArgs(args) {
-    return args
-      .map((arg) => {
-        if (arg instanceof Error) {
-          const {message, stack} = arg;
-          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
-        }
-        if (typeof arg === 'object' && arg !== null) {
-          try {
-            return JSON.stringify(arg);
-          } catch (error) {
-            return '[Circular Object]';
-          }
-        } else {
-          return String(arg);
-        }
-      })
-      .join(' ');
-  }
-
-  console.log = function(...args) {
-    const logString = stringifyArgs(args);
-    window.parent.postMessage({ type: 'log', message: logString }, '*');
-    originalConsoleLog.apply(console, args);
-  };
-
-  console.error = function(...args) {
-    let errorData;
-    if (args.length > 0 && args[0] instanceof Error) {
-      const err = args[0];
-      // If the first arg is an Error, capture its details.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        ...getErrorObject(err),
-        rawArgsString: stringifyArgs(args.slice(1)),
-        timestamp: new Date().toISOString(),
-      };
-    } else {
-      // If not an Error object, treat all args as a general error message.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        message: stringifyArgs(args),
-        name: 'ConsoleLoggedError',
-        stack: null,
-        timestamp: new Date().toISOString(),
-      };
-    }
-    window.parent.postMessage(errorData, '*');
-    originalConsoleError.apply(console, args);
-  };
-
-  // Listen for global unhandled synchronous errors.
-  window.addEventListener('error', function(event) {
-    const errorDetails = event.error ? getErrorObject(event.error) : {
-      message: event.message,
-      name: 'GlobalError',
-      stack: null,
-      filename: event.filename,
-      lineno: event.lineno,
-      colno: event.colno,
-    };
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'global',
-      ...errorDetails,
-      message: errorDetails.message || event.message,
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-  // Listen for unhandled promise rejections (asynchronous errors).
-  window.addEventListener('unhandledrejection', function(event) {
-    const errorDetails = getErrorObject(event.reason);
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'unhandledrejection',
-      ...errorDetails,
-      message: errorDetails.message || 'Unhandled Promise Rejection',
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-})();</script>
+<html lang="tr">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Ronda Social Club | Link Hub</title>
@@ -622,7 +41,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 16px 14px 44px;
+      padding: 24px 14px 44px;
       position: relative;
       overflow-x: hidden;
     }
@@ -652,39 +71,6 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       cursor: crosshair;
     }
 
-    .nebula-glow {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(95px);
-      opacity: 0.6;
-      pointer-events: none;
-      will-change: transform;
-      animation: nebulaPulse 14s ease-in-out infinite alternate;
-    }
-
-    .nebula-bottom {
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle, rgba(200, 125, 70, 0.35) 0%, rgba(200, 125, 70, 0) 70%);
-      bottom: -100px;
-      left: -100px;
-    }
-
-    .nebula-top {
-      width: 460px;
-      height: 460px;
-      background: radial-gradient(circle, rgba(105, 55, 180, 0.38) 0%, rgba(41, 29, 70, 0) 70%);
-      top: -120px;
-      right: -120px;
-      animation-duration: 18s;
-    }
-
-    @keyframes nebulaPulse {
-      0% { transform: scale(1) translate(0, 0); opacity: 0.5; }
-      50% { transform: scale(1.18) translate(30px, -25px); opacity: 0.75; }
-      100% { transform: scale(0.92) translate(-20px, 20px); opacity: 0.55; }
-    }
-
     .interaction-hint {
       position: relative;
       z-index: 2;
@@ -698,7 +84,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       border: 1px solid rgba(200, 125, 70, 0.3);
       padding: 5px 13px;
       border-radius: 20px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       backdrop-filter: blur(8px);
       box-shadow: 0 0 15px rgba(200, 125, 70, 0.15);
       animation: floatBadge 3s ease-in-out infinite;
@@ -707,41 +93,6 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
     @keyframes floatBadge {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-3px); }
-    }
-
-    .admin-bar {
-      width: 100%;
-      max-width: 420px;
-      margin-bottom: 14px;
-      background: rgba(22, 15, 38, 0.75);
-      backdrop-filter: blur(14px);
-      border: 1px dashed rgba(200, 125, 70, 0.45);
-      border-radius: 14px;
-      padding: 9px 13px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.76rem;
-      color: var(--cream);
-      position: relative;
-      z-index: 3;
-    }
-
-    .admin-bar button {
-      background: linear-gradient(135deg, var(--copper) 0%, #A85C28 100%);
-      color: #FFF;
-      border: none;
-      padding: 5px 11px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 0.72rem;
-      transition: all 0.2s;
-      box-shadow: 0 3px 10px rgba(200, 125, 70, 0.35);
-    }
-
-    .admin-bar button:active {
-      transform: scale(0.96);
     }
 
     .app-container {
@@ -934,6 +285,22 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       box-shadow: 0 0 12px rgba(200, 125, 70, 0.6);
     }
 
+    .link-card.vocab-card {
+      background: linear-gradient(135deg, rgba(20, 32, 48, 0.9) 0%, rgba(138, 92, 230, 0.18) 100%);
+      border: 1.5px solid rgba(138, 92, 230, 0.45);
+    }
+
+    .link-card.vocab-card .card-icon {
+      background: rgba(138, 92, 230, 0.2);
+      border-color: rgba(138, 92, 230, 0.5);
+    }
+
+    .badge-vocab {
+      background: rgba(138, 92, 230, 0.25);
+      border: 1px solid rgba(138, 92, 230, 0.5);
+      color: #E2D3FF;
+    }
+
     .link-card.website-card {
       border: 1.5px solid rgba(138, 92, 230, 0.35);
     }
@@ -1012,7 +379,25 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       50% { box-shadow: 0 0 18px rgba(255, 164, 102, 0.9); }
     }
 
-    #bookingModal, #aiModal, #editModal {
+    .link-card.easter-egg-card {
+      background: linear-gradient(135deg, rgba(255, 164, 102, 0.18) 0%, rgba(225, 48, 108, 0.18) 100%);
+      border: 1.5px dashed var(--copper-glow);
+      box-shadow: 0 0 20px rgba(255, 164, 102, 0.2);
+    }
+
+    .badge-egg {
+      background: rgba(255, 164, 102, 0.25);
+      border: 1px solid var(--copper-glow);
+      color: var(--copper-glow);
+      animation: pulseEgg 1.5s infinite;
+    }
+
+    @keyframes pulseEgg {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    #bookingModal, #aiModal, #promoModal, #vocabModal {
       display: none;
       position: fixed;
       top: 0;
@@ -1027,7 +412,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       padding: 14px;
     }
 
-    .booking-modal-box, .ai-modal-box, .modal-box {
+    .booking-modal-box, .ai-modal-box, .promo-modal-box, .vocab-modal-box {
       background: #150D24;
       border: 1.5px solid var(--copper-glow);
       width: 100%;
@@ -1042,7 +427,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       position: relative;
     }
 
-    .booking-input, .ai-select, .ai-input, .modal-box input {
+    .booking-input, .ai-select, .ai-input {
       width: 100%;
       padding: 11px 13px;
       background: rgba(10, 6, 20, 0.9);
@@ -1055,7 +440,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       margin-bottom: 12px;
     }
 
-    .booking-input:focus, .ai-select:focus, .ai-input:focus, .modal-box input:focus {
+    .booking-input:focus, .ai-select:focus, .ai-input:focus {
       border-color: var(--copper-glow);
       box-shadow: 0 0 12px rgba(200, 125, 70, 0.3);
     }
@@ -1083,87 +468,116 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       transform: scale(0.98);
     }
 
-    .ai-tabs {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 16px;
-      background: rgba(28, 20, 48, 0.85);
-      padding: 4px;
-      border-radius: 12px;
-      border: 1px solid rgba(200, 125, 70, 0.25);
-    }
-
-    .ai-tab-btn {
-      flex: 1;
-      background: transparent;
-      border: none;
-      color: var(--cream-muted);
-      padding: 8px 6px;
-      border-radius: 9px;
-      font-size: 0.74rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .ai-tab-btn.active {
-      background: var(--copper);
-      color: #FFFFFF;
-      box-shadow: 0 2px 10px rgba(200, 125, 70, 0.45);
-    }
-
-    .ai-generate-btn {
+    /* Kampanya Modal Piksel Art / Emoji Konteyner Tasarımı */
+    .promo-art-container {
       width: 100%;
-      background: linear-gradient(135deg, var(--copper-glow) 0%, var(--copper) 100%);
-      color: #0A0614;
-      border: none;
-      padding: 12px;
-      border-radius: 11px;
-      font-weight: 800;
-      font-size: 0.88rem;
-      cursor: pointer;
+      background: linear-gradient(135deg, rgba(200, 125, 70, 0.2) 0%, rgba(138, 92, 230, 0.2) 100%);
+      border: 1.5px solid rgba(200, 125, 70, 0.45);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      position: relative;
+      box-shadow: inset 0 0 20px rgba(200, 125, 70, 0.15);
+    }
+
+    .pixel-avatar-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pixel-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(28, 20, 48, 0.9);
+      border: 2px solid var(--copper-glow);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      transition: transform 0.15s ease;
-      box-shadow: 0 4px 18px rgba(200, 125, 70, 0.4);
+      font-size: 1.6rem;
+      box-shadow: 0 0 15px rgba(200, 125, 70, 0.4);
+      animation: pulseAvatar 2s ease-in-out infinite;
     }
 
-    .ai-generate-btn:active {
-      transform: scale(0.98);
+    @keyframes pulseAvatar {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
     }
 
-    .ai-generate-btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
+    .pixel-bridge-vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-align: center;
+      flex: 1;
+      padding: 0 10px;
     }
 
-    .ai-result-card {
-      margin-top: 15px;
-      background: rgba(28, 20, 48, 0.75);
-      border: 1px solid rgba(200, 125, 70, 0.4);
-      border-radius: 12px;
-      padding: 14px;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      color: #FAF7F2;
-      position: relative;
-      display: none;
+    .pixel-heart-icon {
+      font-size: 1.35rem;
+      animation: pulseHeart 1.5s ease-in-out infinite;
     }
 
-    .ai-spinner {
+    @keyframes pulseHeart {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.25); opacity: 1; }
+    }
+
+    .pixel-handshake-icon {
+      font-size: 1.25rem;
+      animation: pulseHandshake 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseHandshake {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.25); opacity: 1; }
+    }
+
+    .discount-floating-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      background: var(--copper-glow);
+      color: #0A0614;
+      padding: 4px 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(200, 125, 70, 0.6);
+      white-space: nowrap;
+    }
+
+    .vocab-game-box {
+      background: rgba(18, 12, 32, 0.85);
+      border: 1px solid rgba(138, 92, 230, 0.4);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .vocab-display-word {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--copper-glow);
+      margin: 8px 0;
+      letter-spacing: 1px;
+    }
+
+    .vocab-level-badge {
       display: inline-block;
-      width: 18px;
-      height: 18px;
-      border: 2.5px solid rgba(10, 6, 20, 0.3);
-      border-radius: 50%;
-      border-top-color: #0A0614;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: rgba(138, 92, 230, 0.25);
+      border: 1px solid rgba(138, 92, 230, 0.5);
+      color: #E2D3FF;
+      padding: 3px 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
 
     .link-card.upcoming {
@@ -1231,21 +645,11 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
 <body>
 
   <div class="cosmic-viewport">
-    <div class="nebula-glow nebula-bottom"></div>
-    <div class="nebula-glow nebula-top"></div>
-    <canvas id="interactiveCanvas" width="1135" height="762"></canvas>
+    <canvas id="interactiveCanvas"></canvas>
   </div>
 
   <div class="interaction-hint">
     <span>✨ Ekrana dokunarak veya kaydırarak evreni canlandır!</span>
-  </div>
-
-  <div class="admin-bar">
-    <span>🪐 <strong>Ronda Hub</strong></span>
-    <div style="display: flex; gap: 6px;">
-      <button onclick="openEditor()">✏️ Ayarlar</button>
-      <button onclick="copyCurrentCode()">📋 Kopyala</button>
-    </div>
   </div>
 
   <div class="app-container">
@@ -1261,8 +665,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
 
     <div class="links-stack">
       
-      <!-- 1. Rezervasyon Kartı (Açar Built-in Form Modal) -->
-      <div class="link-card primary-event" onclick="openBookingModal()">
+      <!-- 1. Rezervasyon Kartı -->
+      <div class="link-card primary-event" onclick="window.openBookingModal()">
         <div class="card-left">
           <div class="card-icon">🎟️</div>
           <div class="card-texts">
@@ -1273,7 +677,59 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         <span class="badge-pill badge-price">300 ₺</span>
       </div>
 
-      <!-- 2. Resmi Web Sitesi -->
+      <!-- 2. Arkadaş Kampanyası -->
+      <div class="link-card" onclick="window.openPromoModal()">
+        <div class="card-left">
+          <div class="card-icon">👥</div>
+          <div class="card-texts">
+            <span class="card-title">Arkadaşını Getir Kampanyası</span>
+            <span class="card-desc">Daha önce gelmeyen arkadaşınla gel, kişi başı 200 TL öde!</span>
+          </div>
+        </div>
+        <span class="badge-pill badge-promo">200 ₺ / Kişi</span>
+      </div>
+
+      <!-- 3. Günün C1-C2 Kelimesi & Mini Test -->
+      <div class="link-card vocab-card" onclick="window.openVocabModal()">
+        <div class="card-left">
+          <div class="card-icon">📖</div>
+          <div class="card-texts">
+            <span class="card-title">Günün C1-C2 Kelimesi &amp; Mini Test</span>
+            <span class="card-desc">İleri düzey kelime dağarcığını test et</span>
+          </div>
+        </div>
+        <span class="badge-pill badge-vocab">Oyna / Keşfet</span>
+      </div>
+
+      <!-- 4. WhatsApp Topluluğu -->
+      <a href="https://chat.whatsapp.com/IcE5ShT0pGs6duGvemBCfW" id="link-community" class="link-card whatsapp-card" target="_blank">
+        <div class="card-left">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.04 2C6.52 2 2.05 6.47 2.05 12C2.05 13.82 2.53 15.55 3.39 17.05L2 22L7.1 20.66C8.54 21.45 10.25 21.9 12.04 21.9C17.56 21.9 22.03 17.43 22.03 11.95C22.03 6.47 17.56 2 12.04 2ZM17.65 15.65C17.41 16.32 16.33 16.92 15.48 17.1C14.89 17.22 14.12 17.32 11.55 16.25C8.27 14.89 6.13 11.53 5.96 11.31C5.8 11.09 4.63 9.54 4.63 7.95C4.63 6.36 5.43 5.58 5.75 5.25C6.07 4.92 6.55 4.79 6.95 4.79C7.08 4.79 7.2 4.8 7.3 4.81C7.6 4.88 7.75 4.96 7.95 5.43C8.19 6.01 8.78 7.44 8.85 7.54C8.92 7.64 8.99 7.78 8.9 7.95C8.81 8.12 8.74 8.2 8.61 8.35C8.48 8.5 8.34 8.65 8.19 8.82C8.04 8.99 7.88 9.17 8.06 9.48C8.24 9.79 8.87 10.81 9.79 11.62C10.98 12.67 11.96 13.01 12.31 13.16C12.66 13.31 12.87 13.28 13.08 13.04C13.29 12.8 13.97 12 14.21 11.67C14.45 11.34 14.69 11.44 15.02 11.56C15.35 11.68 17.1 12.54 17.46 12.72C17.82 12.9 18.06 12.99 18.15 13.14C18.24 13.29 18.24 14.02 17.65 15.65Z" fill="#25D366"/>
+            </svg>
+          </div>
+          <div class="card-texts">
+            <span class="card-title">WhatsApp Topluluğuna Katıl</span>
+            <span class="card-desc">Haftalık duyurular ve kulüp içi sohbet</span>
+          </div>
+        </div>
+        <span class="badge-pill badge-free">Ücretsiz</span>
+      </a>
+
+      <!-- 5. AI Speaking Asistanı -->
+      <div class="link-card ai-assistant-card" onclick="window.openAiModal()">
+        <div class="card-left">
+          <div class="card-icon">✨</div>
+          <div class="card-texts">
+            <span class="card-title">Ronda AI Konuşma Koçu</span>
+            <span class="card-desc">Bu pazar için buz kırıcı soru &amp; seviye önerisi al</span>
+          </div>
+        </div>
+        <span class="badge-pill ai-badge">AI Canlı</span>
+      </div>
+
+      <!-- 6. Resmi Web Sitesi -->
       <a href="https://canol896.github.io/ronda/website.html" id="link-website" class="link-card website-card" target="_blank">
         <div class="card-left">
           <div class="card-icon">🌐</div>
@@ -1285,52 +741,12 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         <span class="badge-pill badge-web">Keşfet ↗</span>
       </a>
 
-      <!-- 3. WhatsApp Topluluğu (Orijinal SVG Logo) -->
-      <a href="https://chat.whatsapp.com/senin-whatsapp-linkin" id="link-community" class="link-card whatsapp-card" target="_blank">
-        <div class="card-left">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.04 2C6.52 2 2.05 6.47 2.05 12C2.05 13.82 2.53 15.55 3.39 17.05L2 22L7.1 20.66C8.54 21.45 10.25 21.9 12.04 21.9C17.56 21.9 22.03 17.43 22.03 11.95C22.03 6.47 17.56 2 12.04 2ZM17.65 15.65C17.41 16.32 16.33 16.92 15.48 17.1C14.89 17.22 14.12 17.32 11.55 16.25C8.27 14.89 6.13 11.53 5.96 11.31C5.8 11.09 4.63 9.54 4.63 7.95C4.63 6.36 5.43 5.58 5.75 5.25C6.07 4.92 6.55 4.79 6.95 4.79C7.08 4.79 7.2 4.8 7.3 4.81C7.6 4.88 7.75 4.96 7.95 5.43C8.19 6.01 8.78 7.44 8.85 7.54C8.92 7.64 8.99 7.78 8.9 7.95C8.81 8.12 8.74 8.2 8.61 8.35C8.48 8.5 8.34 8.65 8.19 8.82C8.04 8.99 7.88 9.17 8.06 9.48C8.24 9.79 8.87 10.81 9.79 11.62C10.98 12.67 11.96 13.01 12.31 13.16C12.66 13.31 12.87 13.28 13.08 13.04C13.29 12.8 13.97 12 14.21 11.67C14.45 11.34 14.69 11.44 15.02 11.56C15.35 11.68 17.1 12.54 17.46 12.72C17.82 12.9 18.06 12.99 18.15 13.14C18.24 13.29 18.24 14.02 17.65 15.65Z" fill="#25D366"></path>
-            </svg>
-          </div>
-          <div class="card-texts">
-            <span class="card-title">WhatsApp Topluluğuna Katıl</span>
-            <span class="card-desc">Haftalık duyurular ve kulüp içi sohbet</span>
-          </div>
-        </div>
-        <span class="badge-pill badge-free">Ücretsiz</span>
-      </a>
-
-      <!-- 4. Arkadaş Kampanyası -->
-      <a href="https://instagram.com/rondasocialclub" id="link-promo" class="link-card" target="_blank">
-        <div class="card-left">
-          <div class="card-icon">👥</div>
-          <div class="card-texts">
-            <span class="card-title">Arkadaşını Getir Kampanyası</span>
-            <span class="card-desc">Yeni arkadaşınla gel, kişi başı 250 TL öde!</span>
-          </div>
-        </div>
-        <span class="badge-pill badge-promo">%17 İndirim</span>
-      </a>
-
-      <!-- 5. AI Speaking Asistanı -->
-      <div class="link-card ai-assistant-card" onclick="openAiModal()">
-        <div class="card-left">
-          <div class="card-icon">✨</div>
-          <div class="card-texts">
-            <span class="card-title">Ronda AI Konuşma Koçu</span>
-            <span class="card-desc">Bu pazar için buz kırıcı soru &amp; seviye önerisi al</span>
-          </div>
-        </div>
-        <span class="badge-pill ai-badge">AI Canlı</span>
-      </div>
-
-      <!-- 6. Instagram (Orijinal SVG Logo) -->
+      <!-- 7. Instagram -->
       <a href="https://instagram.com/rondasocialclub" id="link-ig" class="link-card instagram-card" target="_blank">
         <div class="card-left">
           <div class="card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="#E1306C"></path>
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="#E1306C"/>
             </svg>
           </div>
           <div class="card-texts">
@@ -1341,12 +757,24 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         <span style="color: var(--copper-glow); font-size: 0.95rem; font-weight: 700;">↗</span>
       </a>
 
-      <!-- 7. TikTok (Orijinal SVG Logo) -->
-      <a href="https://tiktok.com/@rondasocialclub" id="link-tiktok" class="link-card tiktok-card" target="_blank">
+      <!-- 8. Gizli Sürpriz / Rickroll Kartı -->
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" id="link-rickroll" class="link-card easter-egg-card" target="_blank">
+        <div class="card-left">
+          <div class="card-icon">🎁</div>
+          <div class="card-texts">
+            <span class="card-title">Özel Sürpriz Çekiliş (Son 1 Kişi!)</span>
+            <span class="card-desc">1 Aylık Sınırsız VIP Etkinlik Hakkı Kazan!</span>
+          </div>
+        </div>
+        <span class="badge-pill badge-egg">Tıkla!</span>
+      </a>
+
+      <!-- 9. TikTok -->
+      <a href="https://www.tiktok.com/@rondaspeakingclub" id="link-tiktok" class="link-card tiktok-card" target="_blank">
         <div class="card-left">
           <div class="card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="#FE2C55"></path>
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="#FE2C55"/>
             </svg>
           </div>
           <div class="card-texts">
@@ -1357,7 +785,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         <span class="badge-pill badge-tiktok">Takip Et</span>
       </a>
 
-      <!-- 8. Yakında -->
+      <!-- 10. Yakında -->
       <div class="link-card upcoming">
         <div class="card-left">
           <div class="card-icon">🎬</div>
@@ -1384,17 +812,18 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
 
   <div id="toastNotification">✨ İşlem başarıyla gerçekleştirildi!</div>
 
+  <!-- Rezervasyon Modalı -->
   <div id="bookingModal">
     <div class="booking-modal-box">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
         <h3 style="font-size: 1.15rem; color: var(--copper-glow); display: flex; align-items: center; gap: 8px;">
           🎟️ Speaking Club Rezervasyonu
         </h3>
-        <button onclick="closeBookingModal()" style="background: transparent; border: none; color: #BBB; font-size: 1.3rem; cursor: pointer;">✕</button>
+        <button onclick="window.closeBookingModal()" style="background: transparent; border: none; color: #BBB; font-size: 1.3rem; cursor: pointer;">✕</button>
       </div>
 
       <p style="font-size: 0.79rem; color: var(--cream-muted); margin-bottom: 14px; line-height: 1.4;">
-        Bilgilerini doldurarak doğrudan Instagram DM üzerinden rezervasyonunu kolayca tamamlayabilirsin:
+        Bilgilerini doldur. Butona bastığında mesajın <strong>panoya kopyalanacak</strong> ve Instagram DM ekranı açılacaktır!
       </p>
 
       <label style="font-size: 0.74rem; font-weight: 700; color: var(--cream-muted);">Adın Soyadın:</label>
@@ -1410,121 +839,237 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         <option value="İleri / Akıcı (B2 - C1)">İleri / Akıcı (B2 - C1)</option>
       </select>
 
-      <button class="booking-submit-btn" onclick="submitBookingToInstagram()">
-        <span>Instagram DM ile Gönder</span> 🚀
+      <button class="booking-submit-btn" onclick="window.copyBookingAndOpenInstagram()">
+        <span>Metni Kopyala &amp; Instagram'ı Aç</span> 🚀
       </button>
     </div>
   </div>
 
+  <!-- Günün Kelimesi & Mini Test Modalı (C1-C2 Seviye Odaklı) -->
+  <div id="vocabModal">
+    <div class="vocab-modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <h3 style="font-size: 1.15rem; color: var(--copper-glow); display: flex; align-items: center; gap: 8px;">
+          📖 Günün C1-C2 Kelimesi &amp; Mini Test
+        </h3>
+        <button onclick="window.closeVocabModal()" style="background: transparent; border: none; color: #BBB; font-size: 1.3rem; cursor: pointer;">✕</button>
+      </div>
+
+      <div class="vocab-game-box">
+        <div id="vocabLevelContainer">
+          <span id="vocabLevelBadge" class="vocab-level-badge">Seviye: C2</span>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--cream-muted); margin-bottom: 4px;" id="vocabPromptLabel">Soru yükleniyor...</div>
+        <div id="vocabTargetDisplay" class="vocab-display-word">Yükleniyor...</div>
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+        <input type="text" id="vocabUserInput" class="booking-input" style="margin: 0; flex: 1;" placeholder="Tahminini yaz...">
+        <button class="booking-submit-btn" style="width: auto; padding: 0 16px; margin: 0;" onclick="window.checkVocabGuess()">Tahmin Et</button>
+      </div>
+
+      <div id="vocabResultArea" style="font-size: 0.84rem; color: var(--cream-muted); text-align: center; min-height: 45px; line-height: 1.4;"></div>
+      
+      <button class="booking-submit-btn" style="margin-top: 10px; background: linear-gradient(135deg, var(--copper-glow) 0%, var(--copper) 100%); color: #0A0614;" onclick="window.loadNewRandomVocab()">
+        <span>Yeni Kelime Üret</span> ⚡
+      </button>
+    </div>
+  </div>
+
+  <!-- Arkadaş Kampanyası Modalı -->
+  <div id="promoModal">
+    <div class="promo-modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <h3 style="font-size: 1.15rem; color: var(--copper-glow); display: flex; align-items: center; gap: 8px;">
+          👥 Arkadaşını Getir Kampanyası
+        </h3>
+        <button onclick="window.closePromoModal()" style="background: transparent; border: none; color: #BBB; font-size: 1.3rem; cursor: pointer;">✕</button>
+      </div>
+
+      <div class="promo-art-container">
+        <!-- Sol: Sen (Erkek Kafası) -->
+        <div class="pixel-avatar-box">
+          <div class="pixel-avatar">👦</div>
+          <span style="font-size: 0.65rem; color: var(--cream-muted); font-weight: 700;">Sen</span>
+        </div>
+        
+        <!-- Orta Dikey Köprü: Kalp, Fiyat Etiketi, El Sıkışma (Hepsi Animasyonlu) -->
+        <div class="pixel-bridge-vertical">
+          <div class="pixel-heart-icon">💖</div>
+          <div class="discount-floating-tag">200 ₺ / Kişi</div>
+          <div class="pixel-handshake-icon">🤝</div>
+        </div>
+
+        <!-- Sağ: Arkadaşın (Kadın Kafası) -->
+        <div class="pixel-avatar-box">
+          <div class="pixel-avatar">👧</div>
+          <span style="font-size: 0.65rem; color: var(--cream-muted); font-weight: 700;">Arkadaşın</span>
+        </div>
+      </div>
+
+      <p style="font-size: 0.79rem; color: var(--cream-muted); margin-bottom: 14px; line-height: 1.4;">
+        Daha önce kulübümüze katılmamış bir arkadaşınla gel, ikiniz de kişi başı sadece <strong style="color: var(--copper-glow);">200 TL</strong> ödeyin!
+      </p>
+
+      <label style="font-size: 0.74rem; font-weight: 700; color: var(--cream-muted);">Senin Adın Soyadın:</label>
+      <input type="text" id="pr-myname" class="booking-input" placeholder="Örn: Deniz Yılmaz">
+
+      <label style="font-size: 0.74rem; font-weight: 700; color: var(--cream-muted);">Getireceğin Arkadaşının Adı:</label>
+      <input type="text" id="pr-friendname" class="booking-input" placeholder="Örn: Zeynep Demir">
+
+      <label style="font-size: 0.74rem; font-weight: 700; color: var(--cream-muted);">İletişim Numaran:</label>
+      <input type="tel" id="pr-phone" class="booking-input" placeholder="Örn: 0532 000 00 00">
+
+      <button class="booking-submit-btn" onclick="window.copyPromoAndOpenInstagram()">
+        <span>Kampanya Metnini Kopyala &amp; Instagram'ı Aç</span> 🚀
+      </button>
+    </div>
+  </div>
+
+  <!-- AI Koç Modalı -->
   <div id="aiModal">
     <div class="ai-modal-box">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
         <h3 style="font-size: 1.15rem; color: var(--copper-glow); display: flex; align-items: center; gap: 8px;">
           ✨ Ronda AI Konuşma Koçu
         </h3>
-        <button onclick="closeAiModal()" style="background: transparent; border: none; color: #BBB; font-size: 1.3rem; cursor: pointer;">✕</button>
+        <button onclick="window.closeAiModal()" style="background: transparent; border: none; color: #BBB; font-size: 1.3rem; cursor: pointer;">✕</button>
       </div>
 
-      <div class="ai-tabs">
-        <button class="ai-tab-btn active" onclick="switchAiTab('icebreaker')">🎭 Buz Kırıcı</button>
-        <button class="ai-tab-btn" onclick="switchAiTab('level')">🎯 Seviye Analizi</button>
-        <button class="ai-tab-btn" onclick="switchAiTab('concierge')">💬 Kulübe Sor</button>
+      <div class="ai-tabs" style="display: flex; gap: 6px; margin-bottom: 14px;">
+        <button class="ai-tab-btn active" onclick="window.switchAiTab('icebreaker')" style="flex:1; padding:7px; background:rgba(200,125,70,0.2); border:1px solid var(--copper-glow); border-radius:8px; color:#FFF; font-size:0.75rem; cursor:pointer;">Buz Kırıcı</button>
+        <button class="ai-tab-btn" onclick="window.switchAiTab('level')" style="flex:1; padding:7px; background:rgba(22,15,38,0.8); border:1px solid rgba(200,125,70,0.3); border-radius:8px; color:#BBB; font-size:0.75rem; cursor:pointer;">Seviye Ölçer</button>
+        <button class="ai-tab-btn" onclick="window.switchAiTab('concierge')" style="flex:1; padding:7px; background:rgba(22,15,38,0.8); border:1px solid rgba(200,125,70,0.3); border-radius:8px; color:#BBB; font-size:0.75rem; cursor:pointer;">Asistan</button>
       </div>
 
-      <div id="tab-icebreaker" class="ai-tab-content">
-        <label style="font-size: 0.76rem; font-weight: 700; color: var(--cream-muted);">Sohbet Teması:</label>
+      <div id="tab-icebreaker">
+        <label style="font-size: 0.74rem; font-weight: 700; color: var(--cream-muted);">Tartışma Teması:</label>
         <select id="ai-topic" class="ai-select">
-          <option value="Sinema ve Popüler Kültür">🎬 Sinema &amp; Popüler Kültür</option>
-          <option value="Seyahat ve Macera Hikayeleri">✈️ Seyahat &amp; Farklı Kültürler</option>
-          <option value="Girişimcilik ve Kariyer Deneyimleri">💼 Girişimcilik &amp; Kariyer</option>
-          <option value="Sosyal Hayat ve İlişkiler">❤️ Sosyal Hayat &amp; Red Flags</option>
+          <option value="Teknoloji & Yapay Zeka">Teknoloji &amp; Yapay Zeka</option>
+          <option value="Seyahat & Kültürler">Seyahat &amp; Kültürler</option>
+          <option value="Sanat & Felsefe">Sanat &amp; Felsefe</option>
+          <option value="Geleceğin Meslekleri">Geleceğin Meslekleri</option>
         </select>
-
-        <label style="font-size: 0.76rem; font-weight: 700; color: var(--cream-muted);">Seviye:</label>
-        <select id="ai-level" class="ai-select">
-          <option value="B1 - Orta Seviye">B1 - Orta (Giriş Masası)</option>
-          <option value="B2 - Akıcı Seviye">B2 - Rahat &amp; Akıcı</option>
-          <option value="C1-C2 - İleri Seviye">C1 / C2 - İleri Seviye</option>
-        </select>
-
-        <button id="btn-generate-icebreaker" class="ai-generate-btn" onclick="generateIcebreaker()">
+        <button id="btn-generate-icebreaker" class="booking-submit-btn" onclick="window.generateIcebreaker()">
           <span>Soru &amp; Başlatıcı Üret</span> ⚡
         </button>
       </div>
 
-      <div id="tab-level" class="ai-tab-content" style="display: none;">
-        <p style="font-size: 0.8rem; color: var(--cream-muted); margin-bottom: 8px;">
-          Kendini İngilizce bir iki cümleyle tanıt, yapay zeka seviyeni ve masanı öneren analiz yapsın:
-        </p>
-        <textarea id="ai-user-sentence" class="ai-input" rows="3" placeholder="e.g. I usually watch English series and want to speak fluently..."></textarea>
-        <button id="btn-analyze-level" class="ai-generate-btn" onclick="analyzeUserLevel()">
+      <div id="tab-level" style="display: none;">
+        <label style="font-size: 0.74rem; font-weight: 700; color: var(--cream-muted);">İngilizce Bir Cümle Yaz:</label>
+        <input type="text" id="ai-user-sentence" class="ai-input" placeholder="Örn: I believe technology connects people...">
+        <button id="btn-analyze-level" class="booking-submit-btn" onclick="window.analyzeUserLevel()">
           <span>Seviyemi Değerlendir</span> 🔍
         </button>
       </div>
 
-      <div id="tab-concierge" class="ai-tab-content" style="display: none;">
-        <p style="font-size: 0.8rem; color: var(--cream-muted); margin-bottom: 8px;">
-          Pazar seansı, mekan (115 Karma Atölye) veya ikramlar hakkında merak ettiklerini sor:
-        </p>
-        <input type="text" id="ai-question-input" class="ai-input" placeholder="Örn: Alkolsüz punch ikramı dahil mi?">
-        <button id="btn-ask-concierge" class="ai-generate-btn" onclick="askClubConcierge()">
+      <div id="tab-concierge" style="display: none;">
+        <label style="font-size: 0.74rem; font-weight: 700; color: var(--cream-muted);">Kulüp Hakkında Sorun:</label>
+        <input type="text" id="ai-question-input" class="ai-input" placeholder="Örn: Bu pazar etkinlik nerede?">
+        <button id="btn-ask-concierge" class="booking-submit-btn" onclick="window.askClubConcierge()">
           <span>Asistana Sor</span> 💬
         </button>
       </div>
 
-      <div id="aiResultBox" class="ai-result-card"></div>
-    </div>
-  </div>
-
-  <div id="editModal">
-    <div class="modal-box">
-      <h3>⚡ Linkleri Güncelle</h3>
-      <label>Instagram Kullanıcı Adı (DM için):</label>
-      <input type="text" id="input-ig-user" value="rondasocialclub">
-      <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px;">
-        <button class="ai-tab-btn" onclick="closeEditor()" style="background: rgba(255,255,255,0.1); padding: 8px 14px; border-radius: 8px;">Kapat</button>
-        <button class="ai-generate-btn" onclick="saveEdits()" style="width: auto; padding: 8px 16px;">Kaydet</button>
-      </div>
+      <div id="aiResultBox" style="margin-top: 14px; padding: 12px; background: rgba(10,6,20,0.8); border-radius: 10px; font-size: 0.82rem; color: var(--cream); display: none;"></div>
     </div>
   </div>
 
   <script>
     const canvas = document.getElementById('interactiveCanvas');
-    const ctx = canvas.getContext('2d', { alpha: true });
+    const ctx = canvas.getContext('2d');
 
-    let width = 0;
-    let height = 0;
-    let cosmicParticles = [];
-    const PARTICLE_COUNT = 40;
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
 
-    let pointer = {
-      x: -1000,
-      y: -1000,
-      active: false
-    };
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
 
-    let scrollOffset = 0;
+    let scrollOffset = window.scrollY;
     window.addEventListener('scroll', () => {
-      scrollOffset = window.scrollY * 0.12; // Parallax kaydırma katsayısı
+      scrollOffset = window.scrollY;
     }, { passive: true });
 
-    function resizeCanvas() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      ctx.scale(dpr, dpr);
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
+    const pointer = { x: width / 2, y: height / 2, active: false };
+    const cosmicParticles = [];
+    const PARTICLE_COUNT = 45;
     const PALETTE = [
       { r: 200, g: 125, b: 70 },
-      { r: 255, g: 175, b: 110 },
-      { r: 145, g: 100, b: 230 },
-      { r: 255, g: 230, b: 190 }
+      { r: 255, g: 164, b: 102 },
+      { r: 138, g: 92, b: 230 },
+      { r: 250, g: 247, b: 242 }
+    ];
+
+    // C1 ve C2 Seviye Odaklı Seçkin Kelime Havuzu (100+ Kelime)
+    const vocabDatabase = [
+      { en: "Serendipity", tr: "şans eseri güzel şeyler keşfetme yeteneği", level: "C2" },
+      { en: "Eloquent", tr: "güzel ve etkili konuşan, hitabeti güçlü", level: "C1" },
+      { en: "Ephemeral", tr: "gelip geçici, kısa süren", level: "C2" },
+      { en: "Meticulous", tr: "titiz, çok dikkatli, ince eleyip sık dokuyan", level: "C1" },
+      { en: "Pragmatic", tr: "faydacı, pratik", level: "C1" },
+      { en: "Spontaneous", tr: "kendiliğinden olan, doğaçlama", level: "C1" },
+      { en: "Authentic", tr: "özgün, otantik, gerçek", level: "C1" },
+      { en: "Compassion", tr: "şefkat, merhamet", level: "C1" },
+      { en: "Diligence", tr: "çalışkanlık, özen, gayret", level: "C1" },
+      { en: "Integrity", tr: "dürüstlük, bütünlük, ilkelilik", level: "C1" },
+      { en: "Jubilation", tr: "büyük sevinç, coşkulu kutlama", level: "C2" },
+      { en: "Kinship", tr: "akrabalık, yakınlık, tinsel bağ", level: "C1" },
+      { en: "Longevity", tr: "uzun ömürlülük", level: "C1" },
+      { en: "Momentum", tr: "ivme, hareket gücü", level: "C1" },
+      { en: "Negotiation", tr: "müzakere, uzlaşma görüşmesi", level: "C1" },
+      { en: "Pioneering", tr: "öncü, çığır açan", level: "C1" },
+      { en: "Quirky", tr: "sıra dışı, ilginç huylu", level: "C1" },
+      { en: "Resolute", tr: "kararlı, azimli", level: "C1" },
+      { en: "Tenacious", tr: "inatçı, kopmayan, azimli", level: "C2" },
+      { en: "Ubiquitous", tr: "her yerde bulunan, yaygın", level: "C2" },
+      { en: "Versatile", tr: "çok yönlü, marifetli", level: "C1" },
+      { en: "Wanderlust", tr: "seyahat etme tutkusu", level: "C1" },
+      { en: "Zenith", tr: "en yüksek nokta, zirve, doruk", level: "C2" },
+      { en: "Altruism", tr: "özgecilik, başkalarını düşünme", level: "C1" },
+      { en: "Benevolent", tr: "iyiliksever, hayırsever", level: "C1" },
+      { en: "Candid", tr: "samimi, açık sözlü", level: "C1" },
+      { en: "Devious", tr: "kurnaz, hilekar, dolambaçlı", level: "C1" },
+      { en: "Eradicate", tr: "kökünü kazımak, tamamen yok etmek", level: "C1" },
+      { en: "Flourish", tr: "gelişmek, serpilmek, refaha ermek", level: "C1" },
+      { en: "Gargantuan", tr: "devasa, çok büyük, dev gibi", level: "C2" },
+      { en: "Haphazard", tr: "gelişigüzel, rastgele, hedefsiz", level: "C1" },
+      { en: "Impetuous", tr: "atılgan, aceleci, düşünmeden hareket eden", level: "C2" },
+      { en: "Jovial", tr: "neşeli, şen, keyifli", level: "C1" },
+      { en: "Lucid", tr: "açık, anlaşılır, berrak", level: "C1" },
+      { en: "Mandatory", tr: "zorunlu, mecburî", level: "C1" },
+      { en: "Nebulous", tr: "belirsiz, sisli, net olmayan", level: "C2" },
+      { en: "Obsolete", tr: "modası geçmiş, hükmü kalmamış", level: "C1" },
+      { en: "Pensive", tr: "düşünceli, dalgın", level: "C1" },
+      { en: "Reciprocal", tr: "karşılıklı, mütekabil", level: "C1" },
+      { en: "Scrutiny", tr: "yakın inceleme, dikkatli denetim", level: "C1" },
+      { en: "Trivial", tr: "önemsiz, ufak tefek", level: "C1" },
+      { en: "Unanimous", tr: "oy birliğiyle alınan, müttefik", level: "C1" },
+      { en: "Validate", tr: "doğrulamak, onaylanmış kılmak", level: "C1" },
+      { en: "Wary", tr: "temkinli, ihtiyatlı, kuşkulu", level: "C1" },
+      { en: "Zeal", tr: "şevk, büyük gayret, coşku", level: "C1" },
+      { en: "Acumen", tr: "sezgi gücü, zeka, kavrayış yeteneği", level: "C2" },
+      { en: "Befuddle", tr: "kafasını karıştırmak, sersemletmek", level: "C2" },
+      { en: "Cacophony", tr: "uyumsuz sesler bütünü, kakofoni", level: "C2" },
+      { en: "Debilitate", tr: "güçten düşürmek, zayıflatmak", level: "C2" },
+      { en: "Euphemism", tr: "kibar ifade, yumuşatma sözcüğü", level: "C2" },
+      { en: "Furtive", tr: "gizli, kurnazca, çaktırmadan yapılan", level: "C2" },
+      { en: "Garrulous", tr: "geveze, çok konuşan", level: "C2" },
+      { en: "Hegemony", tr: "egemenlik, siyasi üstünlük", level: "C2" },
+      { en: "Iconoclast", tr: "kutsal inançlara karşı çıkan kimse", level: "C2" },
+      { en: "Juxtapose", tr: "karşılaştırmak için yan yana koymak", level: "C2" },
+      { en: "Labyrinthine", tr: "labirent gibi karmaşık", level: "C2" },
+      { en: "Mellifluous", tr: "kulağa hoş gelen, tatlı sesli", level: "C2" },
+      { en: "Nadir", tr: "en dip nokta, en kötü zaman", level: "C2" },
+      { en: "Obfuscate", tr: "aklını bulandırmak, karmaşıklaştırmak", level: "C2" },
+      { en: "Paradigm", tr: "paradigma, model, örnek", level: "C2" },
+      { en: "Recalcitrant", tr: "itaatsiz, dik başlı", level: "C2" },
+      { en: "Sagacious", tr: "akıllı, ferasetli, bilge", level: "C2" },
+      { en: "Tantamount", tr: "anlamına gelen, eşdeğer olan", level: "C2" },
+      { en: "Vacillate", tr: "kararsız kalmak, mekik dokumak", level: "C2" },
+      { en: "Winsome", tr: "çekici, cazibeli, sevimli", level: "C2" },
+      { en: "Yoke", tr: "boyunduruk, boyunduruk altına almak", level: "C2" }
     ];
 
     class CosmicParticle {
@@ -1541,16 +1086,16 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
           this.y = Math.random() * height;
         }
 
-        const speed = 0.2 + Math.random() * 0.35;
+        const speed = 0.22 + Math.random() * 0.35;
         this.baseVx = speed;
-        this.baseVy = -speed * 0.8;
+        this.baseVy = -speed * 0.65;
         this.vx = this.baseVx;
         this.vy = this.baseVy;
 
         this.size = 1.6 + Math.random() * 2.8;
         this.color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
-        this.alpha = 0.3 + Math.random() * 0.4;
-        this.twinkleSpeed = 0.01 + Math.random() * 0.02;
+        this.alpha = 0.38 + Math.random() * 0.45;
+        this.twinkleSpeed = 0.012 + Math.random() * 0.02;
         this.twinkleAngle = Math.random() * Math.PI * 2;
       }
 
@@ -1558,13 +1103,13 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         let dx = this.x - pointer.x;
         let dy = this.y - pointer.y;
         let distSq = dx * dx + dy * dy;
-        let maxDist = 100;
+        let maxDist = 110;
 
         if (pointer.active && distSq < maxDist * maxDist && distSq > 1) {
           let dist = Math.sqrt(distSq);
-          let force = (1 - dist / maxDist) * 2;
-          this.vx += (dx / dist) * force * 0.2;
-          this.vy += (dy / dist) * force * 0.2;
+          let force = (1 - dist / maxDist) * 2.0;
+          this.vx += (dx / dist) * force * 0.25;
+          this.vy += (dy / dist) * force * 0.25;
         }
 
         this.vx += (this.baseVx - this.vx) * 0.08;
@@ -1580,12 +1125,13 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       }
 
       draw() {
-        const curAlpha = Math.max(0.15, this.alpha + Math.sin(this.twinkleAngle) * 0.15);
+        const curAlpha = Math.max(0.18, this.alpha + Math.sin(this.twinkleAngle) * 0.15);
         const { r, g, b } = this.color;
-        const renderY = this.y - scrollOffset;
+        const renderY = (this.y - scrollOffset * 0.25) % height;
+        const positiveY = renderY < 0 ? renderY + height : renderY;
 
         ctx.beginPath();
-        ctx.arc(this.x, renderY, this.size, 0, Math.PI * 2);
+        ctx.arc(this.x, positiveY, this.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${curAlpha})`;
         ctx.fill();
       }
@@ -1640,18 +1186,113 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       const toast = document.getElementById('toastNotification');
       toast.textContent = message;
       toast.classList.add('show');
-      setTimeout(() => { toast.classList.remove('show'); }, 3200);
+      setTimeout(() => { toast.classList.remove('show'); }, 3500);
     }
 
-    function openBookingModal() {
-      document.getElementById('bookingModal').style.display = 'flex';
-    }
+    // Global Modal & Game Functions attached explicitly to window
+    window.openBookingModal = function() { 
+      const modal = document.getElementById('bookingModal');
+      if (modal) modal.style.display = 'flex'; 
+    };
+    window.closeBookingModal = function() { 
+      const modal = document.getElementById('bookingModal');
+      if (modal) modal.style.display = 'none'; 
+    };
 
-    function closeBookingModal() {
-      document.getElementById('bookingModal').style.display = 'none';
-    }
+    window.openPromoModal = function() { 
+      const modal = document.getElementById('promoModal');
+      if (modal) modal.style.display = 'flex'; 
+    };
+    window.closePromoModal = function() { 
+      const modal = document.getElementById('promoModal');
+      if (modal) modal.style.display = 'none'; 
+    };
 
-    function submitBookingToInstagram() {
+    window.openAiModal = function() { 
+      const modal = document.getElementById('aiModal');
+      if (modal) modal.style.display = 'flex'; 
+    };
+    window.closeAiModal = function() { 
+      const modal = document.getElementById('aiModal');
+      if (modal) modal.style.display = 'none'; 
+    };
+
+    window.openVocabModal = function() { 
+      const modal = document.getElementById('vocabModal');
+      if (modal) {
+        modal.style.display = 'flex';
+        window.loadNewRandomVocab();
+      }
+    };
+    window.closeVocabModal = function() { 
+      const modal = document.getElementById('vocabModal');
+      if (modal) modal.style.display = 'none';
+    };
+
+    let currentVocabIndex = 0;
+    let currentVocabMode = 'tr-to-en'; 
+    let vocabAttempts = 0;
+
+    window.loadNewRandomVocab = function() {
+      currentVocabIndex = Math.floor(Math.random() * vocabDatabase.length);
+      vocabAttempts = 0;
+      currentVocabMode = Math.random() < 0.5 ? 'tr-to-en' : 'en-to-tr';
+      
+      const vocabInput = document.getElementById('vocabUserInput');
+      const resultArea = document.getElementById('vocabResultArea');
+      if (vocabInput) vocabInput.value = '';
+      if (resultArea) resultArea.innerHTML = '';
+      window.renderVocabCard();
+    };
+
+    window.renderVocabCard = function() {
+      const item = vocabDatabase[currentVocabIndex];
+      const levelBadge = document.getElementById('vocabLevelBadge');
+      const targetDisplay = document.getElementById('vocabTargetDisplay');
+      const promptLabel = document.getElementById('vocabPromptLabel');
+      const resultArea = document.getElementById('vocabResultArea');
+
+      if (levelBadge) levelBadge.textContent = `Seviye: ${item.level}`;
+      if (resultArea) resultArea.innerHTML = '';
+
+      if (currentVocabMode === 'tr-to-en') {
+        if (promptLabel) promptLabel.textContent = "Türkçe Anlamı Verilen Kelimenin İngilizcesi Nedir?";
+        if (targetDisplay) targetDisplay.textContent = `"${item.tr}"`;
+      } else {
+        if (promptLabel) promptLabel.textContent = "İngilizce Kelimenin Türkçe Karşılığı Nedir?";
+        if (targetDisplay) targetDisplay.textContent = item.en;
+      }
+    };
+
+    window.checkVocabGuess = function() {
+      const inputEl = document.getElementById('vocabUserInput');
+      const resultArea = document.getElementById('vocabResultArea');
+      if (!inputEl || !resultArea) return;
+
+      const userVal = inputEl.value.trim().toLowerCase();
+      const item = vocabDatabase[currentVocabIndex];
+
+      if (!userVal) {
+        showToast("⚠️ Lütfen bir tahmin yaz.");
+        return;
+      }
+
+      const correctAns = currentVocabMode === 'tr-to-en' ? item.en.toLowerCase() : item.tr.toLowerCase();
+
+      if (userVal === correctAns || correctAns.includes(userVal)) {
+        resultArea.innerHTML = `<span style="color: var(--accent-green); font-weight: 700; font-size: 0.92rem;">🎉 Harika! Tebrikler Doğru Bildin! 🥳<br><span style="color: var(--cream-muted); font-size: 0.8rem;">(${item.en} = ${item.tr})</span></span>`;
+        showToast("🎉 Tebrikler, doğru tahmin!");
+      } else {
+        vocabAttempts++;
+        if (vocabAttempts >= 2) {
+          resultArea.innerHTML = `<span style="color: var(--copper-glow);">💡 Doğru Yanıt: <strong>${currentVocabMode === 'tr-to-en' ? item.en : item.tr}</strong> (Seviye: ${item.level})</span>`;
+        } else {
+          resultArea.innerHTML = `<span style="color: #FF7B95;">❌ Yanlış tahmin, 1 hakkın daha kaldı!</span>`;
+        }
+      }
+    };
+
+    window.copyBookingAndOpenInstagram = function() {
       const name = document.getElementById('bk-name').value.trim();
       const phone = document.getElementById('bk-phone').value.trim();
       const level = document.getElementById('bk-level').value;
@@ -1661,39 +1302,73 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         return;
       }
 
-      const message = encodeURIComponent(`Merhaba! Ronda Speaking Club için rezervasyon yapmak istiyorum.\n\n👤 Ad Soyad: ${name}\n📞 Telefon: ${phone}\n🎯 İngilizce Seviyesi: ${level}`);
-      
-      // Instagram kullanıcı adına otomatik yönlendirme
-      const igUser = "rondasocialclub";
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      
-      let dmUrl = isMobile ? `instagram://direct?username=${igUser}` : `https://instagram.com/direct/new/`;
-      
-      window.open(`https://ig.me/m/${igUser}?text=${message}`, '_blank');
-      closeBookingModal();
-      showToast("✨ Rezervasyon bilgin hazırlandı! Instagram DM ekranı açılıyor.");
-    }
+      const bookingMessage = `Merhaba! Ronda Speaking Club için rezervasyon yapmak istiyorum.\n\n👤 Ad Soyad: ${name}\n📞 Telefon: ${phone}\n🎯 İngilizce Seviyesi: ${level}`;
 
-    function openEditor() { document.getElementById('editModal').style.display = 'flex'; }
-    function closeEditor() { document.getElementById('editModal').style.display = 'none'; }
-    function saveEdits() {
-      closeEditor();
-      showToast("✅ Ayarlar güncellendi!");
-    }
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = bookingMessage;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        navigator.clipboard?.writeText(bookingMessage);
+      }
+      document.body.removeChild(tempTextArea);
 
-    function openAiModal() { document.getElementById('aiModal').style.display = 'flex'; }
-    function closeAiModal() { document.getElementById('aiModal').style.display = 'none'; }
+      window.closeBookingModal();
+      showToast("📋 Rezervasyon mesajın kopyalandı! Instagram'da yapıştırıp gönderebilirsin.");
 
-    let currentAiTab = 'icebreaker';
-    function switchAiTab(tab) {
-      currentAiTab = tab;
-      document.querySelectorAll('.ai-tab-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      setTimeout(() => {
+        window.open('https://instagram.com/rondasocialclub', '_blank');
+      }, 1200);
+    };
+
+    window.copyPromoAndOpenInstagram = function() {
+      const myName = document.getElementById('pr-myname').value.trim();
+      const friendName = document.getElementById('pr-friendname').value.trim();
+      const phone = document.getElementById('pr-phone').value.trim();
+
+      if (!myName || !friendName || !phone) {
+        showToast("⚠️ Lütfen tüm alanları doldur.");
+        return;
+      }
+
+      const promoMessage = `Merhaba! Arkadaşını Getir Kampanyası ile 2 kişilik rezervasyon yapmak istiyoruz (Kişi başı 200 TL).\n\n👤 Benim Adım: ${myName}\n🤝 Getirdiğim Arkadaş: ${friendName}\n📞 Telefon: ${phone}`;
+
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = promoMessage;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        navigator.clipboard?.writeText(promoMessage);
+      }
+      document.body.removeChild(tempTextArea);
+
+      window.closePromoModal();
+      showToast("📋 Kampanya mesajın kopyalandı! Instagram'da yapıştırıp gönderebilirsin.");
+
+      setTimeout(() => {
+        window.open('https://instagram.com/rondasocialclub', '_blank');
+      }, 1200);
+    };
+
+    window.switchAiTab = function(tab) {
+      document.querySelectorAll('.ai-tab-btn').forEach(btn => {
+        btn.style.background = 'rgba(22,15,38,0.8)';
+        btn.style.borderColor = 'rgba(200,125,70,0.3)';
+        btn.style.color = '#BBB';
+      });
+      event.target.style.background = 'rgba(200,125,70,0.2)';
+      event.target.style.borderColor = 'var(--copper-glow)';
+      event.target.style.color = '#FFF';
+
       document.getElementById('tab-icebreaker').style.display = tab === 'icebreaker' ? 'block' : 'none';
       document.getElementById('tab-level').style.display = tab === 'level' ? 'block' : 'none';
       document.getElementById('tab-concierge').style.display = tab === 'concierge' ? 'block' : 'none';
       document.getElementById('aiResultBox').style.display = 'none';
-    }
+    };
 
     async function callGeminiApi(systemPrompt, userQuery) {
       const apiKey = "";
@@ -1711,9 +1386,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       return data.candidates?.[0]?.content?.parts?.[0]?.text || "Yanıt alınamadı.";
     }
 
-    async function generateIcebreaker() {
+    window.generateIcebreaker = async function() {
       const topic = document.getElementById('ai-topic').value;
-      const level = document.getElementById('ai-level').value;
       const btn = document.getElementById('btn-generate-icebreaker');
       const resultBox = document.getElementById('aiResultBox');
       btn.disabled = true;
@@ -1721,7 +1395,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
       resultBox.style.display = 'block';
       resultBox.innerHTML = '<span style="color: var(--copper-bright);">🪐 Soru üretiliyor...</span>';
       try {
-        const text = await callGeminiApi("Sen Ronda Speaking Club moderatörüsün. Tema ve seviyeye uygun 1 İngilizce ana soru, 1 takip sorusu ve deyim ver.", `Tema: ${topic}, Seviye: ${level}`);
+        const text = await callGeminiApi("Sen Ronda Speaking Club moderatörüsün. Tema ve seviyeye uygun 1 İngilizce ana soru, 1 takip sorusu ve deyim ver.", `Tema: ${topic}`);
         resultBox.innerHTML = formatAiResponse(text);
       } catch (e) {
         resultBox.innerHTML = `Bağlantı hatası oluştu.`;
@@ -1729,9 +1403,9 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         btn.disabled = false;
         btn.innerHTML = `<span>Soru &amp; Başlatıcı Üret</span> ⚡`;
       }
-    }
+    };
 
-    async function analyzeUserLevel() {
+    window.analyzeUserLevel = async function() {
       const sentence = document.getElementById('ai-user-sentence').value.trim();
       const btn = document.getElementById('btn-analyze-level');
       const resultBox = document.getElementById('aiResultBox');
@@ -1749,9 +1423,9 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         btn.disabled = false;
         btn.innerHTML = `<span>Seviyemi Değerlendir</span> 🔍`;
       }
-    }
+    };
 
-    async function askClubConcierge() {
+    window.askClubConcierge = async function() {
       const question = document.getElementById('ai-question-input').value.trim();
       const btn = document.getElementById('btn-ask-concierge');
       const resultBox = document.getElementById('aiResultBox');
@@ -1769,23 +1443,12 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         btn.disabled = false;
         btn.innerHTML = `<span>Asistana Sor</span> 💬`;
       }
-    }
+    };
 
     function formatAiResponse(md) {
       return md.replace(/\*\*(.*?)\*\*/g, '<strong style="color: var(--copper-glow);">$1</strong>').replace(/\n/g, '<br>');
     }
-
-    function copyCurrentCode() {
-      const fullHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-      const temp = document.createElement('textarea');
-      temp.value = fullHtml;
-      document.body.appendChild(temp);
-      temp.select();
-      document.execCommand('copy');
-      document.body.removeChild(temp);
-      showToast('📋 Tüm kod panoya kopyalandı!');
-    }
   </script>
 
-
-</body></html>
+</body>
+</html>
